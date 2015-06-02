@@ -20,7 +20,9 @@ public class Player {
 	 *Chance			Any combination										Sum of all dice
 	 * 
 	 */
-	public 
+	public Player(){
+		
+	}
 	public void roll(){
 		
 	}
