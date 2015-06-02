@@ -2,13 +2,7 @@ package game;
 
 
 
-public class player {
-	public void roll(){
-		
-	}
-	public void reRoll(){
-		
-	}
+public class Player {
 	/*
 	 * 
 	 *Aces				Any combination										The sum of dice with the number 1	
@@ -26,5 +20,13 @@ public class player {
 	 *Chance			Any combination										Sum of all dice
 	 * 
 	 */
+	public 
+	public void roll(){
+		
+	}
+	public void reRoll(){
+		
+	}
+	
 	
 }
