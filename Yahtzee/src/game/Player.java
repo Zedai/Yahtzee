@@ -3,7 +3,9 @@ package game;
 
 
 public class Player {
-	public static final 
+	public final String name;
+	private int[] dice;
+	private int rerolls;
 	/*
 	 *Aces				Any combination										The sum of dice with the number 1	
 	 *Twos				Any combination										The sum of dice with the number 2	
@@ -20,15 +22,50 @@ public class Player {
 	 *Chance			Any combination										Sum of all dice
 	 * 
 	 */
-	public Player(){
-		
+	public Player(String name){
+		this.name = name;
+		this.rerolls = 0;
 	}
+
+	/**
+	 * Prompts the player to choose an action
+	 * @TODO
+	 */
+	public void act(){
+
+	}
+	
+	/**
+	 * Updates dice with new values
+	 */
 	public void roll(){
-		
+		dice = DiceUtil.getRandomDice();
+		UI.printRoll(dice);
+		act();
 	}
+
+	/**
+	 * Rerolls designated dies
+	 * Precondition: rerolls is not greater than 3
+	 */
 	public void reRoll(){
-		
+		if(rerolls >= 3){
+			int[] newDice = UI.promptForReRoll(dice);
+			dice = DiceUtil.populateDiceArray(newDice);
+			UI.printReRoll(dice);
+			rerolls++;
+		}
+		else
+		act();
 	}
-	
-	
+
+	/**
+	 * Let the player choose a bonus
+	 * @TODO
+	 */
+	public void chooseBonus(){
+
+	}
+
+
 }

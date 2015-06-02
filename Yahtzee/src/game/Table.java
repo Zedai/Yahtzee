@@ -1,16 +1,20 @@
 package game;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Table {
 
 	public Table(){
 		
 	}
 	
+	private List<Player> players = new ArrayList<Player>();
 	/**
 	 * Prepares the game for play
 	 */
 	public void setupGame(){
-		
+		players.add(new Player("Wow"));
 	}
 	
 	/**
