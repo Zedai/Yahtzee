@@ -29,6 +29,9 @@ public class DiceUtil {
 	 */
 	public static int[] calculateScores() {
 		
+		/*
+		 * GO AWAY JUSTIN IS DOING THIS LOL
+		 */
 		return null;
 		
 	}
