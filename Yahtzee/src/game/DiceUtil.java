@@ -42,7 +42,7 @@ public class DiceUtil {
 	public static int[] calculateScores() {
 
 		/*
-		 * GO AWAY JUSTIN IS DOING THIS LOL
+		 * GO AWAY JUSTIN IS DOING THIS LOL //Justin you're hella territorial.
 		 */
 		return null;
 
