@@ -3,8 +3,8 @@ package game;
 
 
 public class Player {
+	public static final 
 	/*
-	 * 
 	 *Aces				Any combination										The sum of dice with the number 1	
 	 *Twos				Any combination										The sum of dice with the number 2	
 	 *Threes			Any combination										The sum of dice with the number 3	
