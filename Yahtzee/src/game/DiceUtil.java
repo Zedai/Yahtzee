@@ -125,13 +125,18 @@ public class DiceUtil {
 	private static int fourOfAKind(int[] dice) {
 		
 		int duplicates = 0;
+		int total = 0;
 		for(int j = 0; j < dice.length; j++)
 			for(int k = 0; k < dice.length; k++)
-				if(j!=k && dice[j] == dice[k])
+				if(j!=k && dice[j] == dice[k]) {
 					duplicates++;
+					total = dice[j]*4;
+				}
 		
 		if(duplicates >= 4)
-			
+			return total;
+		
+		return 0;
 		
 	}
 	
