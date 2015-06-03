@@ -47,6 +47,12 @@ public class DiceUtil {
 		 */
 		int[] possibleScoreSet = new int[7];		//7 types of scoring possible
 		/*Order goes according to indexes:
+		 *Ones
+		 *Twos
+		 *Threes
+		 *Fours
+		 *Fives
+		 *Sixes
 		 *3 of a kind
 		 *4 of a kind
 		 *full house
@@ -74,6 +80,26 @@ public class DiceUtil {
 			possibleScoreSet[1] = sumDice;
 		}
 		if(duplicates == 3 && )
+			
+			
+			
+			
+			
+		for(int i=0;i<dice.length;i++)	{
+			
+			if(dice[i] == dice[i-1])
+				possibleScoreSet[5] = 50;
+			else 
+				possibleScoreSet[5] = 0;
+			
+				
+			
+			
+		}
+			
+			
+			
+			
 	}
 
 }
