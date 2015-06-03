@@ -150,7 +150,7 @@ public class DiceUtil {
 				}
 		
 		if(duplicates >= 4)
-			return chance();
+			return chance(dice);
 		
 		return 0;
 		
