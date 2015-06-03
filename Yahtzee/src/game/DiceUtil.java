@@ -101,10 +101,20 @@ public class DiceUtil {
 			
 			
 	}
-	
+	/**
+	 * Returns 25 if fullhouse is possible
+	 * 
+	 * @param dice
+	 * @return
+	 */
 	private static int fullHouse(int[] dice) {
 		
-		for(int i=)
+		int possible = 0;
+		for(int i=0;i<dice.length;i++) {
+			
+			
+			
+		}
 		
 		return 0;
 		
