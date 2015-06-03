@@ -109,20 +109,29 @@ public class DiceUtil {
 	 */
 	private static int fullHouse(int[] dice) {
 		
-		int possible = 0;
-		for(int i=0;i<dice.length;i++) {
-			
-			
-			
-		}
+		
+		int duplicates = 0;
+		for(int j = 0; j < dice.length; j++)
+			for(int k = 0; k < dice.length; k++)
+				if(j!=k && dice[j] == dice[k])
+					duplicates++;
+		if(duplicates >= 3)
+			return 25;
 		
 		return 0;
 		
 	}
 	
-	private static int fourOfAKind() {
+	private static int fourOfAKind(int[] dice) {
 		
-		return 0;
+		int duplicates = 0;
+		for(int j = 0; j < dice.length; j++)
+			for(int k = 0; k < dice.length; k++)
+				if(j!=k && dice[j] == dice[k])
+					duplicates++;
+		
+		if(duplicates >= 4)
+			
 		
 	}
 
