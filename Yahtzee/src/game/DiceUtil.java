@@ -43,7 +43,7 @@ public class DiceUtil {
 	public static int[] calculateScores(int[] dice) 
 	{
 		/*
-		 * GO AWAY JUSTIN IS DOING THIS LOL //Justin you're hella territorial.
+		 * GO AWAY JUSTIN & ARYAK ARE DOING THIS LOL //Justin you're hella territorial.
 		 */
 		int[] possibleScoreSet = new int[7];		//7 types of scoring possible
 		/*Order goes according to indexes:
