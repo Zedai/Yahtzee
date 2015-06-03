@@ -47,6 +47,12 @@ public class DiceUtil {
 		 */
 		int[] possibleScoreSet = new int[7];		//7 types of scoring possible
 		/*Order goes according to indexes:
+		 *Ones
+		 *Twos
+		 *Threes
+		 *Fours
+		 *Fives
+		 *Sixes
 		 *3 of a kind
 		 *4 of a kind
 		 *full house
@@ -55,7 +61,7 @@ public class DiceUtil {
 		 *Yahtzee
 		 *Chance
 		 */
-		int sumDice = 0;							
+	/*	int sumDice = 0;							
 		for(int x = 0; x < dice.length; x++)
 			sumDice += dice[x];
 		
@@ -73,7 +79,51 @@ public class DiceUtil {
 			possibleScoreSet[0] = sumDice;
 			possibleScoreSet[1] = sumDice;
 		}
-		if(duplicates == 3 && )
+		if(duplicates == 3 && true)
+			
+			
+			
+			
+			
+		for(int i=0;i<dice.length;i++)	{
+			
+			if(dice[i] == dice[i-1])
+				possibleScoreSet[5] = 50;
+			else 
+				possibleScoreSet[5] = 0;
+			
+				
+			
+			
+		}
+			
+			*/
+			
+			
+	}
+	/**
+	 * Returns 25 if fullhouse is possible
+	 * 
+	 * @param dice
+	 * @return
+	 */
+	private static int fullHouse(int[] dice) {
+		
+		int possible = 0;
+		for(int i=0;i<dice.length;i++) {
+			
+			
+			
+		}
+		
+		return 0;
+		
+	}
+	
+	private static int fourOfAKind() {
+		
+		return 0;
+		
 	}
 
 }
