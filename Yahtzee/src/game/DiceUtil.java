@@ -95,11 +95,31 @@ public class DiceUtil {
 				
 			
 			
+		}		
+			
+			
+			
+	}
+	
+	private int oneToSix(int diceNumber, int[] dice)
+	{
+		boolean indexesAreSame = true;
+		for(int x = 0; x < dice.length; x++)
+		{
+			dice[x]
 		}
-			
-			
-			
-			
+	}
+	
+	private int smallStraight(int[] dice)
+	{
+		//TODO implement this shit pls
+		return 0;
+	}
+	
+	private int largeStraight(int[] dice)
+	{
+		//TODO implement this shit pls
+		return 0;
 	}
 
 }
