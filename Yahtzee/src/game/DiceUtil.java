@@ -125,5 +125,31 @@ public class DiceUtil {
 		return 0;
 		
 	}
+	
+	/**
+	 * Calculates the score for yahtzee
+	 * @param dice the dice to be scored
+	 * @return the score for yahtzee
+	 */
+	private static int yahtzee(int[] dice) {
+		int key = dice[0];
+		for (int i = 1; i < dice.length; i++) {
+			if (dice[i] != key)
+				return 0;
+		}
+		return 50;
+	}
+	
+	/**
+	 * Calculates the sum of dice
+	 * @param dice the dice to sum
+	 * @return the sum of dice
+	 */
+	private static int chance(int[] dice){
+		int sum = 0;
+		for(int i : dice)
+			sum += i;
+		return sum;
+	}
 
 }
