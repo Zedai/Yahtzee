@@ -98,9 +98,6 @@ public class DiceUtil {
 		 *Chance
 		 */
 			
-<<<<<<< HEAD
-=======
-			
 	}
 	/**
 	 * Returns 25 if fullhouse is possible
@@ -151,8 +148,9 @@ public class DiceUtil {
 		for (int i = 1; i < dice.length; i++) {
 			if (dice[i] != key)
 				return 0;
->>>>>>> branch 'master' of https://github.com/chriscush765/Yahtzee.git
 		}
+		return 0;
+	}
 	
 	private int oneToSix(int number, int[] dice)
 	{
