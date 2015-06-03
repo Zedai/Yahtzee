@@ -7,7 +7,7 @@ public class Player {
 	private int[] dice;
 	private int rerolls;
 	/*
-	 *Aces				Any combination										The sum of dice with the number 1	
+	 *Ones				Any combination										The sum of dice with the number 1	
 	 *Twos				Any combination										The sum of dice with the number 2	
 	 *Threes			Any combination										The sum of dice with the number 3	
 	 *Fours				Any combination										The sum of dice with the number 4	
@@ -66,6 +66,7 @@ public class Player {
 	public void chooseBonus(){
 
 	}
+	
 
 
 }

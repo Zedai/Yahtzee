@@ -61,7 +61,7 @@ public class DiceUtil {
 		 *Yahtzee
 		 *Chance
 		 */
-		int sumDice = 0;							
+	/*	int sumDice = 0;							
 		for(int x = 0; x < dice.length; x++)
 			sumDice += dice[x];
 		
@@ -79,7 +79,7 @@ public class DiceUtil {
 			possibleScoreSet[0] = sumDice;
 			possibleScoreSet[1] = sumDice;
 		}
-		if(duplicates == 3 && )
+		if(duplicates == 3 && true)
 			
 			
 			
@@ -96,18 +96,20 @@ public class DiceUtil {
 			
 			
 		}		
-			
+			*/
 			
 			
 	}
 	
-	private int oneToSix(int diceNumber, int[] dice)
+	private int oneToSix(int number, int[] dice)
 	{
-		boolean indexesAreSame = true;
+		int sum = 0;
 		for(int x = 0; x < dice.length; x++)
 		{
-			dice[x]
+			if(dice[x] == number)
+				sum += dice[x];
 		}
+		return sum;
 	}
 	
 	private int smallStraight(int[] dice)
