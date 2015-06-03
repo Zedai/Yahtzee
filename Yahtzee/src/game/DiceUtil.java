@@ -61,7 +61,7 @@ public class DiceUtil {
 		 *Yahtzee
 		 *Chance
 		 */
-		int sumDice = 0;							
+	/*	int sumDice = 0;							
 		for(int x = 0; x < dice.length; x++)
 			sumDice += dice[x];
 		
@@ -79,7 +79,7 @@ public class DiceUtil {
 			possibleScoreSet[0] = sumDice;
 			possibleScoreSet[1] = sumDice;
 		}
-		if(duplicates == 3 && )
+		if(duplicates == 3 && true)
 			
 			
 			
@@ -97,9 +97,23 @@ public class DiceUtil {
 			
 		}
 			
+			*/
 			
 			
-			
+	}
+	
+	private static int fullHouse(int[] dice) {
+		
+		for(int i=)
+		
+		return 0;
+		
+	}
+	
+	private static int fourOfAKind() {
+		
+		return 0;
+		
 	}
 
 }
