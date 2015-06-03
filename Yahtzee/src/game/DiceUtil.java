@@ -137,7 +137,15 @@ public class DiceUtil {
 		return 0;
 		
 	}
-	
+
+	private static int chance(int[] dice) {
+		int sum = 0;
+		for (int i : dice) {
+			sum += i;
+		}
+		return sum;
+	}
+
 	/**
 	 * Calculates the score for yahtzee
 	 * @param dice the dice to be scored
