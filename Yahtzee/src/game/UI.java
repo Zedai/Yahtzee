@@ -49,4 +49,24 @@ public class UI {
 	public static void tooManyReRolls(){
 		
 	}
+	
+	/**
+	 * Displays the possible bonuses in a nice table
+	 * @param possibleBonuses the bonuses to display
+	 * @param completedBonuses the bonuses that have already been filled
+	 * @todo
+	 */
+	public static void displayBonuses(int[] possibleBonuses, boolean[] completedBonuses) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	/**
+	 * Warn the player that they tried to choose an action that they have already chosen before
+	 * @todo
+	 */
+	public static void invalidChoice() {
+		// TODO Auto-generated method stub
+		
+	}
 }

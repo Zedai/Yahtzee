@@ -5,7 +5,9 @@ package game;
 public class Player {
 	public final String name;
 	private int[] dice;
+	private boolean[] completedBonuses = new boolean[13];
 	private int rerolls;
+	private int[] score;
 	/*
 	 *Ones				Any combination										The sum of dice with the number 1	
 	 *Twos				Any combination										The sum of dice with the number 2	
@@ -24,14 +26,23 @@ public class Player {
 	 */
 	public Player(String name){
 		this.name = name;
-		this.rerolls = 0;
 	}
 
 	/**
 	 * Prompts the player to choose an action
 	 * @TODO
 	 */
-	public void act(){
+	public void act() {
+		int[] possibleBonuses = DiceUtil.calculateScores(dice);
+		UI.displayBonuses(possibleBonuses, completedBonuses);
+		int choice = UI.promptForAction();
+		if (!completedBonuses[choice]) {
+			score[choice] += possibleBonuses[choice];
+			completedBonuses[choice] = true;
+		} else {
+			UI.invalidChoice();
+			act();
+		}
 
 	}
 	
