@@ -26,7 +26,7 @@ public class DiceUtil {
 		return dice;
 	}
 	
-	/**
+	/**z
 	 * Returns a random array of ints from 1 to 6, with 6 ints in total
 	 * @return
 	 */
