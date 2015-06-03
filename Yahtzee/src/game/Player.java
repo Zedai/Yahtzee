@@ -33,16 +33,7 @@ public class Player {
 	 * @TODO
 	 */
 	public void act() {
-		int[] possibleBonuses = DiceUtil.calculateScores(dice);
-		UI.displayBonuses(possibleBonuses, completedBonuses);
-		int choice = UI.promptForAction();
-		if (!completedBonuses[choice]) {
-			score[choice] += possibleBonuses[choice];
-			completedBonuses[choice] = true;
-		} else {
-			UI.invalidChoice();
-			act();
-		}
+
 
 	}
 	
@@ -56,8 +47,7 @@ public class Player {
 	}
 
 	/**
-	 * Rerolls designated dies
-	 * Precondition: rerolls is not greater than 3
+	 * Lets the user reroll designated dice
 	 */
 	public void reRoll(){
 		if(rerolls >= 3){
@@ -72,10 +62,18 @@ public class Player {
 
 	/**
 	 * Let the player choose a bonus
-	 * @TODO
 	 */
 	public void chooseBonus(){
-
+		int[] possibleBonuses = DiceUtil.calculateScores(dice);
+		UI.displayBonuses(possibleBonuses, completedBonuses);
+		int choice = UI.promptToChooseBonus();
+		if (!completedBonuses[choice]) {
+			score[choice] += possibleBonuses[choice];
+			completedBonuses[choice] = true;
+		} else {
+			UI.invalidBonusChoice();
+			act();
+		}
 	}
 	
 

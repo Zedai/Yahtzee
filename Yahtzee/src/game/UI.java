@@ -14,6 +14,17 @@ public class UI {
 	public static int promptForAction(){
 		return 0;
 	}
+	
+	/**
+	 * Prompt the player to choose a bonus
+	 * @return an int relating to the index in the bonuses array
+	 * for example, 0 means ones
+	 * 7 means three pair or whatever
+	 * @todo
+	 */
+	public static int promptToChooseBonus(){
+		return 0;
+	}
 	/**
 	 * Prints out the outcome of an initial roll
 	 * @param dice The dice that the player just rolled
@@ -62,10 +73,18 @@ public class UI {
 	}
 	
 	/**
-	 * Warn the player that they tried to choose an action that they have already chosen before
+	 * Alert the player that they have chose a bonus that has already been chosen before
+	 */
+	public static void invalidBonusChoice(){
+		errorDialouge("You have already chosen this bonus before");
+	}
+	
+	/**
+	 * Warn the player that they tried to choose a bonus that they have already chosen before
+	 * @param error the error to display
 	 * @todo
 	 */
-	public static void invalidChoice() {
+	public static void errorDialouge(String error) {
 		// TODO Auto-generated method stub
 		
 	}
