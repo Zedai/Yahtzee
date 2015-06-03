@@ -36,16 +36,44 @@ public class DiceUtil {
 
 	/**
 	 * Calculates All possible scores based on the current dice state
-	 * 
+	 * @author 177864
 	 * @return
 	 */
-	public static int[] calculateScores() {
-
+	//hypothetical dice because I don't see how scores will be calculated if nothing is passed in
+	public static int[] calculateScores(int[] dice) 
+	{
 		/*
 		 * GO AWAY JUSTIN IS DOING THIS LOL //Justin you're hella territorial.
 		 */
-		return null;
-
+		int[] possibleScoreSet = new int[7];		//7 types of scoring possible
+		/*Order goes according to indexes:
+		 *3 of a kind
+		 *4 of a kind
+		 *full house
+		 *small Straight
+		 *Large Straight
+		 *Yahtzee
+		 *Chance
+		 */
+		int sumDice = 0;							
+		for(int x = 0; x < dice.length; x++)
+			sumDice += dice[x];
+		
+		int duplicates = 0;
+		for(int j = 0; j < dice.length; j++)
+			for(int k = 0; k < dice.length; k++)
+				if(j!=k && dice[j] == dice[k])
+					duplicates++;
+		
+		possibleScoreSet[6] = sumDice;
+		if(duplicates == 3)
+			possibleScoreSet[0] = sumDice;
+		if(duplicates == 4)
+		{
+			possibleScoreSet[0] = sumDice;
+			possibleScoreSet[1] = sumDice;
+		}
+		if(duplicates == 3 && )
 	}
 
 }
