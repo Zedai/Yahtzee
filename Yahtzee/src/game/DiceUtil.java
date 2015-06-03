@@ -119,7 +119,11 @@ public class DiceUtil {
 		return 0;
 		
 	}
-	
+	/**
+	 * @TODO fix the algorithm
+	 * @param dice
+	 * @return
+	 */
 	private static int fourOfAKind(int[] dice) {
 		
 		int duplicates = 0;
