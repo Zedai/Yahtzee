@@ -10,7 +10,43 @@ import java.util.List;
  *
  */
 public class DiceUtil {
-
+	/*	int sumDice = 0;							
+	for(int x = 0; x < dice.length; x++)
+		sumDice += dice[x];
+	
+	int duplicates = 0;
+	for(int j = 0; j < dice.length; j++)
+		for(int k = 0; k < dice.length; k++)
+			if(j!=k && dice[j] == dice[k])
+				duplicates++;
+	
+	possibleScoreSet[6] = sumDice;
+	if(duplicates == 3)
+		possibleScoreSet[0] = sumDice;
+	if(duplicates == 4)
+	{
+		possibleScoreSet[0] = sumDice;
+		possibleScoreSet[1] = sumDice;
+	}
+	if(duplicates == 3 && true)
+		
+		
+		
+		
+		
+	for(int i=0;i<dice.length;i++)	{
+		
+		if(dice[i] == dice[i-1])
+			possibleScoreSet[5] = 50;
+		else 
+			possibleScoreSet[5] = 0;
+		
+			
+		
+		
+	}
+		
+		*/
 	/**
 	 * Populates an array with a random value from 1 - 6 ONLY if the current value is 0
 	 * Leaves nonzero values alone
@@ -45,7 +81,7 @@ public class DiceUtil {
 		/*
 		 * GO AWAY JUSTIN & ARYAK ARE DOING THIS LOL //Justin you're hella territorial.
 		 */
-		int[] possibleScoreSet = new int[7];		//7 types of scoring possible
+			//7 types of scoring possible
 		/*Order goes according to indexes:
 		 *Ones
 		 *Twos
@@ -61,43 +97,23 @@ public class DiceUtil {
 		 *Yahtzee
 		 *Chance
 		 */
-	/*	int sumDice = 0;							
-		for(int x = 0; x < dice.length; x++)
-			sumDice += dice[x];
+	
 		
-		int duplicates = 0;
-		for(int j = 0; j < dice.length; j++)
-			for(int k = 0; k < dice.length; k++)
-				if(j!=k && dice[j] == dice[k])
-					duplicates++;
-		
-		possibleScoreSet[6] = sumDice;
-		if(duplicates == 3)
-			possibleScoreSet[0] = sumDice;
-		if(duplicates == 4)
-		{
-			possibleScoreSet[0] = sumDice;
-			possibleScoreSet[1] = sumDice;
-		}
-		if(duplicates == 3 && true)
-			
-			
-			
-			
-			
-		for(int i=0;i<dice.length;i++)	{
-			
-			if(dice[i] == dice[i-1])
-				possibleScoreSet[5] = 50;
-			else 
-				possibleScoreSet[5] = 0;
-			
-				
-			
-			
-		}
-			
-			*/
+		return new int[] {				
+				oneToSix(dice,1),
+				oneToSix(dice,2),
+				oneToSix(dice,3),
+				oneToSix(dice,4),
+				oneToSix(dice,5),
+				oneToSix(dice,6),
+				threeOfAKind(dice),
+				fourOfAKind(dice),
+				fullHouse(dice),
+				smallStraight(dice),
+				largeStraight(dice),
+				yahtzee(dice),
+				chance(dice)				
+		};
 			
 			
 	}
@@ -109,18 +125,32 @@ public class DiceUtil {
 	 */
 	private static int fullHouse(int[] dice) {
 		
-		int possible = 0;
-		for(int i=0;i<dice.length;i++) {
-			
-			
-			
-		}
+		
+		int duplicates = 0;
+		for(int j = 0; j < dice.length; j++)
+			for(int k = 0; k < dice.length; k++)
+				if(j!=k && dice[j] == dice[k])
+					duplicates++;
+		if(duplicates >= 3)
+			return 25;
 		
 		return 0;
 		
 	}
 	
-	private static int fourOfAKind() {
+	private static int fourOfAKind(int[] dice) {
+		
+		int duplicates = 0;
+		int total = 0;
+		for(int j = 0; j < dice.length; j++)
+			for(int k = 0; k < dice.length; k++)
+				if(j!=k && dice[j] == dice[k]) {
+					duplicates++;
+					
+				}
+		
+		if(duplicates >= 4)
+			return chance();
 		
 		return 0;
 		
