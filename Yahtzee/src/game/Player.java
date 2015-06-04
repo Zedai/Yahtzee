@@ -8,6 +8,10 @@ public class Player {
 	private boolean[] completedBonuses = new boolean[13];
 	private int rerolls;
 	private int[] score;
+	
+	private boolean rolled;
+	private boolean reRolled;
+	private boolean choseBonus;
 	/*
 	 *Ones				Any combination										The sum of dice with the number 1	
 	 *Twos				Any combination										The sum of dice with the number 2	
@@ -30,12 +34,25 @@ public class Player {
 
 	/**
 	 * Prompts the player to choose an action
+	 * 
 	 * @TODO
 	 */
 	public void act() {
-
-
+		boolean canRoll = !rolled && !reRolled;
+		boolean canReRoll = rolled && rerolls <= 3;
+		boolean canChooseBonus = rolled && !choseBonus;
+		
+		
+		int choice = UI.promptForAction(canRoll, canReRoll, canChooseBonus);
+		
+		if(choice == 1)
+			roll();
+		else if(choice == 2)
+			reRoll();
+		else if(choice == 3)
+			chooseBonus();
 	}
+	
 	
 	/**
 	 * Updates dice with new values
@@ -51,10 +68,11 @@ public class Player {
 	 */
 	public void reRoll(){
 		if(rerolls >= 3){
-			int[] newDice = UI.promptForReRoll(dice);
+			int[] newDice = UI.promptForReRoll(dice, rolls);
 			dice = DiceUtil.populateDiceArray(newDice);
 			UI.printReRoll(dice);
 			rerolls++;
+			
 		}
 		else
 		act();
@@ -70,6 +88,7 @@ public class Player {
 		if (!completedBonuses[choice]) {
 			score[choice] += possibleBonuses[choice];
 			completedBonuses[choice] = true;
+			choseBonus = true;
 		} else {
 			UI.invalidBonusChoice();
 			act();
