@@ -85,7 +85,10 @@ public class UI {
 				else
 					errorDialouge("You did not type in a valid choice");
 			}
-		} while (choice != -1);
+		} while (choice != -1 && rolls < 3);
+		if(rolls < 3) {
+			System.out.println("Sorry, you ran out of rolls!");
+		}
 		return dice;
 	}
 	

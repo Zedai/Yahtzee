@@ -73,6 +73,7 @@ public class Player {
 		else
 		act();
 	}
+	
 
 	/**
 	 * Let the player choose a bonus
