@@ -143,15 +143,7 @@ public class DiceUtil {
 	 * @return
 	 */
 	private static int fourOfAKind(int[] dice) {
-		
-		int duplicates = 0;
-		int total = 0;
-		for(int j = 0; j < dice.length; j++)
-			for(int k = 0; k < dice.length; k++)
-				if(j!=k && dice[j] == dice[k]) {
-					duplicates++;
-					
-				}
+		int duplicates = greatestOccurrence(dice)[0];
 		
 		if(duplicates >= 4)
 			return chance(dice);
@@ -205,7 +197,12 @@ public class DiceUtil {
 		return 0;
 	}
 	private static int threeOfAKind(int[] dice){
-		//TODO plz to implement meeee
+
+		int duplicates = greatestOccurrence(dice)[0];
+		
+		if(duplicates >= 3)
+			return chance(dice);
+		
 		return 0;
 	}
 	
