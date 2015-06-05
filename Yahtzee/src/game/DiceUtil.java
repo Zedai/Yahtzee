@@ -109,7 +109,7 @@ public class DiceUtil {
 				threeOfAKind(dice),
 				fourOfAKind(dice),
 				fullHouse(dice),
-				smallStraight(dice),
+				smallStraight(dice),				
 				largeStraight(dice),
 				yahtzee(dice),
 				chance(dice)				
