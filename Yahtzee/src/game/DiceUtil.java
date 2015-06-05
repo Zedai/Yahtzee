@@ -100,12 +100,12 @@ public class DiceUtil {
 	
 		
 		return new int[] {				
-				oneToSix(dice,1),
-				oneToSix(dice,2),
-				oneToSix(dice,3),
-				oneToSix(dice,4),
-				oneToSix(dice,5),
-				oneToSix(dice,6),
+				oneToSix(1,dice),
+				oneToSix(2,dice),
+				oneToSix(3,dice),
+				oneToSix(4,dice),
+				oneToSix(5,dice),
+				oneToSix(6,dice),
 				threeOfAKind(dice),
 				fourOfAKind(dice),
 				fullHouse(dice),
