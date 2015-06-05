@@ -97,6 +97,23 @@ public class DiceUtil {
 		 *Yahtzee
 		 *Chance
 		 */
+	
+		
+		return new int[] {				
+				oneToSix(1,dice),
+				oneToSix(2,dice),
+				oneToSix(3,dice),
+				oneToSix(4,dice),
+				oneToSix(5,dice),
+				oneToSix(6,dice),
+				threeOfAKind(dice),
+				fourOfAKind(dice),
+				fullHouse(dice),
+				smallStraight(dice),				
+				largeStraight(dice),
+				yahtzee(dice),
+				chance(dice)				
+		};
 			
 	}
 	/**
@@ -164,7 +181,7 @@ public class DiceUtil {
 		return 0;
 	}
 	
-	private int oneToSix(int number, int[] dice)
+	private static int oneToSix(int number, int[] dice)
 	{
 		int sum = 0;
 		for(int x = 0; x < dice.length; x++)
@@ -175,16 +192,19 @@ public class DiceUtil {
 		return sum;
 	}
 	
-	private int smallStraight(int[] dice)
+	private static int smallStraight(int[] dice)
 	{
 		//TODO implement this shit pls
 		return 0;
 	}
 	
-	private int largeStraight(int[] dice)
+	private static int largeStraight(int[] dice)
 	{
 		//TODO implement this shit pls
 		return 0;
 	}
-
+	private static int threeOfAKind(int[] dice){
+		//TODO plz to implement meeee
+		return 0;
+	}
 }
