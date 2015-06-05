@@ -81,7 +81,8 @@ public class DiceUtil {
 		/*
 		 * GO AWAY JUSTIN & ARYAK ARE DOING THIS LOL
 		 */
-			//7 types of scoring possible
+		
+		//7 types of scoring possible
 		/*Order goes according to indexes:
 		 *Ones
 		 *Twos
@@ -206,5 +207,38 @@ public class DiceUtil {
 	private static int threeOfAKind(int[] dice){
 		//TODO plz to implement meeee
 		return 0;
+	}
+	
+	/**
+	 * @author 177864
+	 * @param dice
+	 * 	The array of values representing the dice roll
+	 * @return
+	 *	The number of occurrences of the most occurring element in the first index of the return array
+	 *	The element itself in the second index of the array
+	 */
+	private static int[] greatestOccurrence(int[] dice)
+	{
+		 int count = 1, tempCount;
+		  int popular = dice[0];
+		  int temp = 0;
+		  for (int i = 0; i < (dice.length - 1); i++)
+		  {
+		    temp = dice[i];
+		    tempCount = 0;
+		    for (int j = 1; j < dice.length; j++)
+		    {
+		      if (temp == dice[j])
+		        tempCount++;
+		    }
+		    if (tempCount > count)
+		    {
+		      popular = temp;
+		      count = tempCount;
+		    }
+		  }
+		  
+		  int[] retArray = {count , popular};
+		  return retArray;
 	}
 }
