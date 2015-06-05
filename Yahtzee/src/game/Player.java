@@ -34,8 +34,6 @@ public class Player {
 
 	/**
 	 * Prompts the player to choose an action
-	 * 
-	 * @TODO
 	 */
 	public void act() {
 		boolean canRoll = !rolled && !reRolled;
@@ -71,8 +69,6 @@ public class Player {
 			int[] newDice = UI.promptForReRoll(dice, rolls);
 			dice = DiceUtil.populateDiceArray(newDice);
 			UI.printReRoll(dice);
-			rerolls++;
-			
 		}
 		else
 		act();
