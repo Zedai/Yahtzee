@@ -203,5 +203,8 @@ public class DiceUtil {
 		//TODO implement this shit pls
 		return 0;
 	}
-
+	private static int threeOfAKind(int[] dice){
+		//TODO plz to implement meeee
+		return 0;
+	}
 }

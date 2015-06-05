@@ -12,7 +12,6 @@ public class UI {
 	 * @param canReRoll if the player can reroll
 	 * @param canRoll if the player can roll
 	 * @return 1 for roll, 2 for reroll, 3 to choose bonus
-	 * @TODO
 	 */
 	public static int promptForAction(boolean canRoll, boolean canReRoll, boolean canChooseBonus){
 		System.out.println("-------------------------");
@@ -133,10 +132,9 @@ public class UI {
 	/**
 	 * Warn the player that they tried to choose a bonus that they have already chosen before
 	 * @param error the error to display
-	 * @todo
 	 */
 	public static void errorDialouge(String error) {
-		// TODO Auto-generated method stub
+		System.out.println("Error: " + error);
 		
 	}
 }
