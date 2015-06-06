@@ -3,6 +3,7 @@
  */
 package game;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -187,7 +188,7 @@ public class DiceUtil {
 	
 	private static int smallStraight(int[] dice)
 	{
-		//TODO implement this shit pls
+		
 		return 0;
 	}
 	
@@ -237,5 +238,12 @@ public class DiceUtil {
 		  
 		  int[] retArray = {count , popular};
 		  return retArray;
+	}
+	private boolean straightCounter(int key, int [] dice){
+		boolean isStraight = false;
+		int temp=0;
+		
+		Arrays.sort(dice);
+		return isStraight;
 	}
 }
