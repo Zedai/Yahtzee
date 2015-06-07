@@ -80,7 +80,8 @@ public class DiceUtil {
 	public static int[] calculateScores(int[] dice) 
 	{
 		/*
-		 * GO AWAY JUSTIN & ARYAK ARE DOING THIS LOL
+		 * GO AWAY JUSTIN & ARYAK ARE DOING THIS LOL tooo laaaate
+		 * 
 		 */
 		
 		//7 types of scoring possible
@@ -188,13 +189,15 @@ public class DiceUtil {
 	
 	private static int smallStraight(int[] dice)
 	{
-		
+		if(straightCounter(4,dice))
+			return 30;
 		return 0;
 	}
 	
 	private static int largeStraight(int[] dice)
 	{
-		//TODO implement this shit pls
+		if(straightCounter(5,dice))
+			return 40;
 		return 0;
 	}
 	private static int threeOfAKind(int[] dice){
@@ -239,11 +242,20 @@ public class DiceUtil {
 		  int[] retArray = {count , popular};
 		  return retArray;
 	}
-	private boolean straightCounter(int key, int [] dice){
+	private static boolean straightCounter(int key, int [] dice){
 		boolean isStraight = false;
 		int temp=0;
-		
+		int counter = 0;
 		Arrays.sort(dice);
+		for(int c=1; c<dice.length;c++){
+			temp = dice[c]-1;
+			if(dice[c]==(temp+1))
+				counter++;
+			else
+				counter=0;
+		}
+		if(counter == key)
+			isStraight = true;
 		return isStraight;
 	}
 }
