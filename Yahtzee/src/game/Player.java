@@ -66,7 +66,7 @@ public class Player {
 	 */
 	public void reRoll(){
 		if(rerolls >= 3){
-			int[] newDice = UI.promptForReRoll(dice, rerolls);
+			int[] newDice = UI.promptForReRoll(dice);
 			dice = DiceUtil.populateDiceArray(newDice);
 			UI.printReRoll(dice);
 		}
