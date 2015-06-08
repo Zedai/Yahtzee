@@ -8,7 +8,7 @@ public class Test {
 		
 		int[] dice = {1,2,3,4,5,6};
 		int [] newshet = DiceUtil.calculateScores(dice);
-		Arrays.toString(newshet);
+		System.out.println(Arrays.toString(newshet));
 		
 		
 	}
