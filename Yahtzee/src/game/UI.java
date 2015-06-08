@@ -26,7 +26,12 @@ public class UI {
 		
 		return Integer.parseInt(in.nextLine());
 	}
-	
+	public static String getPlayerName(int playerNumber) {
+		
+		System.out.println("Enter Player "+playerNumber+" 's Number"); 
+		return in.nextLine();
+		
+	}
 	/**
 	 * Prompt the player to choose a bonus
 	 * @return an int relating to the index in the bonuses array

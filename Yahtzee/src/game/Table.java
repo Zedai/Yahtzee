@@ -14,7 +14,7 @@ public class Table {
 	 * Prepares the game for play
 	 */
 	public void setupGame(){
-		players.add(new Player("Wow"));
+		players.add(new Player("!◄Illuminati►!"));
 	}
 	
 	/**
