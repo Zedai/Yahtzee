@@ -14,7 +14,13 @@ public class Table {
 	 * Prepares the game for play
 	 */
 	public void setupGame(){
-		players.add(new Player("!◄Illuminati►!"));
+		if (players.isEmpty()) {
+		for(int i=1;i<=4;i++) {
+			
+			players.add(new Player(UI.getPlayerName(i)));
+			
+		}
+		}
 	}
 	
 	/**
