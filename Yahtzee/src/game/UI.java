@@ -61,9 +61,10 @@ public class UI {
 	 * @return the modified array
 	 * 
 	 */
-	public static int[] promptForReRoll(int[] dice, int rolls){
+	public static int[] promptForReRoll(int[] dice){
 		System.out.println(" 1   2   3   4   5   6");
 		System.out.println(printDice(dice));
+		int rolls = 3;
 		
 		String input;
 		int choice = 0;
@@ -76,6 +77,7 @@ public class UI {
 					dice[choice - 1] = 0;
 					System.out.println("Marked die "+ choice +" for reroll, here are your dice:");
 					System.out.println(printDice(dice));
+					rolls--;
 				}
 				else
 					errorDialouge("That number is not on the list silly");
@@ -85,8 +87,8 @@ public class UI {
 				else
 					errorDialouge("You did not type in a valid choice");
 			}
-		} while (choice != -1 && rolls < 3);
-		if(rolls < 3) {
+		} while (choice != -1 && rolls <= 0);
+		if(rolls <= 0) {
 			System.out.println("Sorry, you ran out of rolls!");
 		}
 		return dice;
