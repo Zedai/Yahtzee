@@ -20,7 +20,7 @@ public class Table {
 			players.add(new Player(UI.getPlayerName(i)));
 			
 		}
-		}
+		}		
 	}
 	
 	/**
