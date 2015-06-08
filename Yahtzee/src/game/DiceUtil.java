@@ -91,9 +91,7 @@ public class DiceUtil {
 		
 		if(duplicates >= 4)
 			return chance(dice);
-		
 		return 0;
-		
 	}
 
 	private static int chance(int[] dice) {

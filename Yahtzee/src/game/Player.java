@@ -51,6 +51,17 @@ public class Player {
 			chooseBonus();
 	}
 	
+	public boolean isFinished()
+	{
+		boolean hasZero = false;
+		for(int x = 0; x < score.length; x++)
+		{
+			if(this.score[x] == 0)
+				hasZero = true;
+		}
+		return hasZero;
+	}
+	
 	
 	/**
 	 * Updates dice with new values
