@@ -26,9 +26,10 @@ public class Table {
 	
 	/**
 	 * Runs when game is over
-	 * Displays scores and such
+	 * Displays scores and bonuses, compares players, ask if they wqnt to play again
 	 */
-	public void endGame(){
+	public void endGame()
+	{
 		
 	}
 	
