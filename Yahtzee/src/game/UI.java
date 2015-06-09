@@ -67,35 +67,47 @@ public class UI {
 	 * 
 	 */
 	public static int[] promptForReRoll(int[] dice){
-		System.out.println(" 1   2   3   4   5   6");
+		System.out.println(" A   B   C   D   E ");
 		System.out.println(printDice(dice));
-		int rolls = 3;
 		
-		String input;
-		int choice = 0;
+		String input="";
+		int index=0;
+
 		do {
 			System.out.println("Enter the number of the die that you want to change, or done to quit.");
 			input = in.nextLine();
+			if(input.equalsIgnoreCase("A"))
+				index = 0;
+			else if(input.equalsIgnoreCase("B"))
+				index = 1;
+			else if(input.equalsIgnoreCase("C"))
+				index = 2;
+			else if(input.equalsIgnoreCase("D"))
+				index=3;
+			else if(input.equalsIgnoreCase("E"))
+				index = 4;
+			else{
+				System.out.println("That isn't a die");
+				index = -1;
+			}
 			try {
-				choice = Integer.parseInt(input);
-				if(choice >= 1 && choice <= 6){
-					dice[choice - 1] = 0;
-					System.out.println("Marked die "+ choice +" for reroll, here are your dice:");
+				
+				if(index >= 0 && index <= 4){
+					dice[index] = 0;
+					System.out.println("Marked die "+ index+" for reroll, here are your dice:");
 					System.out.println(printDice(dice));
-					rolls--;
+	
 				}
 				else
-					errorDialouge("That number is not on the list silly");
+					errorDialogue("That number is not on the list silly");
 			} catch (NumberFormatException e) {
 				if(input.equalsIgnoreCase("done"))
-					choice = -1;
+					index = -1;
 				else
-					errorDialouge("You did not type in a valid choice");
+					errorDialogue("You did not type in a valid choice");
 			}
-		} while (choice != -1 && rolls <= 0);
-		if(rolls <= 0) {
-			System.out.println("Sorry, you ran out of rolls!");
-		}
+		} while (index != -1 );
+
 		return dice;
 	}
 	
@@ -110,13 +122,7 @@ public class UI {
 		return builder.toString();
 	}
 	
-	/**
-	 * Alerts the user that they've used up all of their rerolls
-	 * @TODO 
-	 */
-	public static void tooManyReRolls(){
-		
-	}
+
 	
 	/**
 	 * Displays the possible bonuses in a nice table
@@ -136,14 +142,14 @@ public class UI {
 	 * Alert the player that they have chose a bonus that has already been chosen before
 	 */
 	public static void invalidBonusChoice(){
-		errorDialouge("You have already chosen this bonus before");
+		errorDialogue("You have already chosen this bonus before");
 	}
 	
 	/**
 	 * Warn the player that they tried to choose a bonus that they have already chosen before
 	 * @param error the error to display
 	 */
-	public static void errorDialouge(String error) {
+	public static void errorDialogue(String error) {
 		System.out.println("Error: " + error);
 		
 	}

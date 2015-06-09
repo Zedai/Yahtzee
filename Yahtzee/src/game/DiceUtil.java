@@ -82,7 +82,7 @@ public class DiceUtil {
 		
 	}
 	/**
-	 * @TODO fix the algorithm
+	 * returns the total of the entire tray if four dice are the same
 	 * @param dice
 	 * @return
 	 */
