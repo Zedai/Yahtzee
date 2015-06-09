@@ -5,15 +5,17 @@ import java.util.List;
 
 public class Table {
 
-	public Table(){
-		
+	private List<Player> players = new ArrayList<Player>();
+	
+	public Table(int numPlayers)
+	{
+		//IDK if number of payers is taken here or in setupGame. I'll just put int parameters in both method headers
 	}
 	
-	private List<Player> players = new ArrayList<Player>();
 	/**
 	 * Prepares the game for play
 	 */
-	public void setupGame(){
+	public void setupGame(int numPlayers){
 		players.clear();
 		for(int i=1;i<=4;i++) {
 			
