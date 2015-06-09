@@ -183,19 +183,17 @@ public class DiceUtil {
 		  return retArray;
 	}
 	private static boolean straightCounter(int key, int [] dice){
-		boolean isStraight = false;
 		int temp=0;
 		int counter = 0;
 		Arrays.sort(dice);
 		for(int c=1; c<dice.length;c++){
-			temp = dice[c]-1;
-			if(dice[c]==(temp+1))
+			temp = dice[c-1];
+			if(dice[c] == (temp+1)){
 				counter++;
-			else
-				counter=0;
+			}
 		}
 		if(counter == key)
-			isStraight = true;
-		return isStraight;
+			return true;
+		return false;
 	}
 }
