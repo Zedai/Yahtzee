@@ -7,15 +7,10 @@ public class Table {
 
 	private List<Player> players = new ArrayList<Player>();
 	
-	public Table(int numPlayers)
-	{
-		//IDK if number of payers is taken here or in setupGame. I'll just put int parameters in both method headers
-	}
-	
 	/**
 	 * Prepares the game for play
 	 */
-	public void setupGame(int numPlayers){
+	public void setupGame(){
 		players.clear();
 		for(int i=1;i<=4;i++) {
 			
@@ -29,13 +24,18 @@ public class Table {
 	/**
 	 * Main loop of the game
 	 */
-	public void runGame(){
-		
+	public void runGame()
+	{
+		System.out.println("WALCOM 2 YATZIE");
+		for (Player p : players) 
+		{
+			p.act();
+		}
 	}
 	
 	/**
 	 * Runs when game is over
-	 * Displays scores and bonuses, compares players, ask if they wqnt to play again
+	 * Displays scores and bonuses, compares players, ask if they want to play again
 	 */
 	public void endGame()
 	{

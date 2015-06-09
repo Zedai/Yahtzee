@@ -5,6 +5,7 @@ package game;
 
 /**
  * @author 310843
+ * @author otherPeopleAsWellLike 177864
  *
  */
 public class YahtzeePlayer {
@@ -17,7 +18,7 @@ public class YahtzeePlayer {
 		
 		Table t = new Table();		
 		t.setupGame();
-		
+		t.runGame();
 		
 
 	}
