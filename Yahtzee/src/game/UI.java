@@ -86,10 +86,9 @@ public class UI {
 				index=3;
 			else if(input.equalsIgnoreCase("E"))
 				index = 4;
-			else{
-				System.out.println("That isn't a die");
+			else
 				index = -1;
-			}
+			
 			try {
 				
 				if(index >= 0 && index <= 4){
