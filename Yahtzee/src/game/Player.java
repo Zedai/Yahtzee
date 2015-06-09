@@ -40,7 +40,6 @@ public class Player {
 		boolean canReRoll = rolled && rerolls <= 3;
 		boolean canChooseBonus = rolled && !choseBonus;
 		
-		
 		int choice = UI.promptForAction(canRoll, canReRoll, canChooseBonus);
 		
 		if(choice == 1)
@@ -53,13 +52,11 @@ public class Player {
 	
 	public boolean isFinished()
 	{
-		boolean hasZero = false;
-		for(int x = 0; x < score.length; x++)
-		{
-			if(this.score[x] == 0)
-				hasZero = true;
+		for (boolean b : completedBonuses) {
+			if(!b) //if bonus is not completed
+				return false; // player still has bonuses
 		}
-		return hasZero;
+		return true;
 	}
 	
 	
@@ -69,7 +66,6 @@ public class Player {
 	public void roll(){
 		dice = DiceUtil.getRandomDice();
 		UI.printRoll(dice);
-		act();
 	}
 
 	/**
@@ -81,8 +77,10 @@ public class Player {
 			dice = DiceUtil.populateDiceArray(newDice);
 			UI.printReRoll(dice);
 		}
-		else
-		act();
+		else {
+			UI.tooManyReRolls();
+			act();
+		}
 	}
 	
 
