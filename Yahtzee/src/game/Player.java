@@ -101,6 +101,16 @@ public class Player {
 		}
 	}
 	
+	public int getNumericScore()
+	{
+		int sum = 0;
+		for(int x = 0; x < score.length; x++)
+		{
+			sum += score[x];
+		}
+		return sum;
+	}
+	
 
 
 }

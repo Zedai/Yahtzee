@@ -18,9 +18,8 @@ public class YahtzeePlayer {
 		
 		Table t = new Table();		
 		t.setupGame();
-		t.runGame();
-		
-
+		t.runGame();		
+		t.endGame();
 	}
 
 }
