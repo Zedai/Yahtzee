@@ -1,6 +1,10 @@
 package game;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
+=======
+import java.util.List;
+>>>>>>> branch 'master' of https://github.com/chriscush765/Yahtzee.git
 import java.util.Scanner;
 
 public class UI {
@@ -90,6 +94,9 @@ public class UI {
 		indecies.add(0);indecies.add(0);indecies.add(0);indecies.add(0);indecies.add(0);
 		
 			System.out.println("Enter the letters of the dice that you want to keep");
+	int index=0;
+
+		do {
 			input = in.nextLine();
 			if(input.indexOf("A") >= 0) {
 				indecies.set(0, dice[0]);
@@ -199,7 +206,12 @@ public class UI {
 		String answer = in.nextLine();
 		return answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("1");
 	}
-	public static String displayFinalScore(Player p) {
-		return "Player "+p.name+" got "+p.getNumericScore()+" point(s)!";
+	public static void displayFinalScore(Player p) {
+		System.out.println("Player "+p.name+" got "+p.getNumericScore()+" point(s)!");
 	}
+	public static void displayWinner(Player p){
+
+		System.out.println("Player "+p.name+" won!");
+	}
+	
 }

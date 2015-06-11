@@ -35,23 +35,10 @@ public class Player {
 	 * Prompts the player to choose an action
 	 */
 	public void act() {
-		boolean canRoll = !rolled;
-		boolean canReRoll = rolled && !reRolled;
-		boolean canChooseBonus = rolled && !choseBonus;
-		int choice = UI.promptForAction(canRoll, canReRoll, canChooseBonus);
+		roll();
+		reRoll();
+		chooseBonus();
 		
-		if(choice == 1 && canRoll)
-			roll();
-		else if(choice == 2 && canReRoll)
-			reRoll();
-		else if(choice == 3 && canChooseBonus)
-			chooseBonus();
-		else if(choice == 4)
-			dispalyBonuses();
-		else{
-			UI.invalidChoice();
-			act();
-		}
 			
 	}
 	
@@ -71,9 +58,6 @@ public class Player {
 	public void roll(){
 		dice = DiceUtil.getRandomDice();
 		UI.printRoll(dice);
-		rolled = true;
-		choseBonus = false;
-		act();
 	}
 
 	/**
@@ -83,8 +67,6 @@ public class Player {
 		int[] newDice = UI.promptForReRoll(dice);
 		dice = DiceUtil.populateDiceArray(newDice);
 		UI.printReRoll(dice);
-		reRolled = true;
-		act();
 	}
 	
 
@@ -98,18 +80,10 @@ public class Player {
 		if (!completedBonuses[choice]) {
 			score[choice] = possibleBonuses[choice];
 			completedBonuses[choice] = true;
-			choseBonus = true;
-			rolled = false;
-			reRolled = false;
 		} else {
 			UI.invalidBonusChoice();
-			act();
+			chooseBonus();
 		}
-	}
-	
-	public void dispalyBonuses(){
-		UI.playerBonus(score, completedBonuses);
-		act();
 	}
 	
 	public int getNumericScore()
