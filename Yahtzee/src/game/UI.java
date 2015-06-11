@@ -50,7 +50,7 @@ public class UI {
 		try {
 			return Integer.parseInt(in.nextLine());
 		} catch (Exception e) {
-			System.out.println("That isn't a valid bonus");
+			System.out.println("That isn't a valid bonus you fool");
 			return promptToChooseBonus();
 		}
 		
@@ -154,7 +154,7 @@ public class UI {
 	 * Alert the player that they have chose a bonus that has already been chosen before
 	 */
 	public static void invalidBonusChoice(){
-		errorDialogue("You have already chosen this bonus before");
+		errorDialogue("You have already chosen this bonus before, did you forget?");
 	}
 
 	/**
@@ -188,10 +188,9 @@ public class UI {
 	}
 	
 	public static boolean promptForRePlay() {
-		System.out.println("Would you like to replay?");
-		System.out.println("Yes/No");
+		System.out.println("Would you like to replay? (yes or no you fool)");
 		String answer = in.nextLine();
-		return answer.equalsIgnoreCase("yes");
+		return answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("1");
 	}
 	public static String displayFinalScore(Player p) {
 		// TODO Auto-generated method stub
