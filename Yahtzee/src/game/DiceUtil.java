@@ -9,6 +9,7 @@ import java.util.List;
 
 /**
  * @author 310843
+ * @author 155053 and the rest of the group
  *
  */
 public class DiceUtil {
