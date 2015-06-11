@@ -188,8 +188,10 @@ public class UI {
 	}
 	
 	public static boolean promptForRePlay() {
-		// TODO Auto-generated method stub
-		return false;
+		System.out.println("Would you like to replay?");
+		System.out.println("Yes/No");
+		String answer = in.nextLine();
+		return answer.equalsIgnoreCase("yes");
 	}
 	public static String displayFinalScore(Player p) {
 		// TODO Auto-generated method stub
