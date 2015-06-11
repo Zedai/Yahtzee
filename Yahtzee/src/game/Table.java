@@ -44,9 +44,11 @@ public class Table {
 	{
 		for(Player p : players)
 		{
-			//How do we want the return? IDK if we should syso or return scores and make the method not void
 			p.getNumericScore();
 		}
+		
+		if(UI.promptForRePlay())
+			setupGame();
 	}
 	
 	
