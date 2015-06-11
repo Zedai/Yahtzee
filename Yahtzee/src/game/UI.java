@@ -94,23 +94,21 @@ public class UI {
 		indecies.add(0);indecies.add(0);indecies.add(0);indecies.add(0);indecies.add(0);
 		
 			System.out.println("Enter the letters of the dice that you want to keep");
-	int index=0;
 
-		
 			input = in.nextLine();
-			if(input.indexOf("A") >= 0) {
+			if(input.indexOf("a") >= 0) {
 				indecies.set(0, dice[0]);
 			}
-			if(input.indexOf("B") >= 0) {
+			if(input.indexOf("b") >= 0) {
 				indecies.set(1, dice[1]);
 			}
-			if(input.indexOf("C") >= 0) {
+			if(input.indexOf("c") >= 0) {
 				indecies.set(2, dice[2]);
 			}
-			if(input.indexOf("D") >= 0) {
+			if(input.indexOf("d") >= 0) {
 				indecies.set(3, dice[3]);
 			}
-			if(input.indexOf("E") >= 0) {
+			if(input.indexOf("e") >= 0) {
 				indecies.set(4, dice[4]);
 			}
 
@@ -119,12 +117,7 @@ public class UI {
 					dice[i] = indecies.get(i);
 				
 				System.out.println("Marked dice for reroll, here are your dice:");
-				System.out.println(" A   B   C   D   E ");
-				System.out.println(printDice(dice));
-			
-
-		
-
+				
 		return dice;
 	}
 
