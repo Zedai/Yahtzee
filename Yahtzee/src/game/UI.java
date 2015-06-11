@@ -25,14 +25,13 @@ public class UI {
 			System.out.println("3. Choose Bonus");
 		
 		System.out.println("4. Dispaly Bonuses");
-		
-		try 
-		{
+	
+		try {
 			return Integer.parseInt(in.nextLine());
-		} catch (NumberFormatException e) 
-		{
+		} catch (NumberFormatException e) {
 			return -1;
 		}
+		
 	}
 	public static String getPlayerName(int playerNumber) {
 		
@@ -174,5 +173,9 @@ public class UI {
 		System.out.println("==========================" + builder);
 		System.out.println("It's " + p.name +"'s turn, with "+ p.getNumericScore() +" points");
 		System.out.println("==========================" + builder);
+	}
+	public static void invalidChoice() {
+		errorDialogue("Stop trying to cheat you l33t hacker");
+		
 	}
 }
