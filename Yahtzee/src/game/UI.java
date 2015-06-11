@@ -17,15 +17,15 @@ public class UI {
 		System.out.println("------------------------");
 		System.out.println("--- Choose an action ---");
 		System.out.println("------------------------");
-int number = 0;
-		if(canRoll)
-			System.out.println((++number)+". "+"Roll");
-		if(canReRoll)
-			System.out.println((++number)+". "+"Re-Roll");
-		if(canChooseBonus)
-			System.out.println((++number)+". "+"Choose Bonus");
 
-		System.out.println((++number)+". "+"Dispaly Bonuses");
+		if(canRoll)
+			System.out.println("1. Roll");
+		if(canReRoll)
+			System.out.println("2. Re-Roll");
+		if(canChooseBonus)
+			System.out.println("3. Choose Bonus");
+
+		System.out.println("4. Dispaly Bonuses");
 
 		try {
 			return Integer.parseInt(in.nextLine());
