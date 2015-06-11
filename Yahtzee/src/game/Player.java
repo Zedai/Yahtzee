@@ -40,13 +40,18 @@ public class Player {
 		boolean canChooseBonus = rolled && !choseBonus;
 		int choice = UI.promptForAction(canRoll, canReRoll, canChooseBonus);
 		
-		if(choice == 1)
+		if(choice == 1 && canRoll)
 			roll();
-		else if(choice == 2)
+		else if(choice == 2 && canReRoll)
 			reRoll();
-		else if(choice == 3)
+		else if(choice == 3 && canChooseBonus)
 			chooseBonus();
 		else if(choice == 4)
+			dispalyBonuses();
+		else{
+			UI.invalidChoice();
+			act();
+		}
 			
 	}
 	
@@ -102,7 +107,10 @@ public class Player {
 		}
 	}
 	
-	public void 
+	public void dispalyBonuses(){
+		UI.playerBonus(score, completedBonuses);
+		act();
+	}
 	
 	public int getNumericScore()
 	{
