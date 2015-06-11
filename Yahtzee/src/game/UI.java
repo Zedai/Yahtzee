@@ -194,8 +194,8 @@ public class UI {
 		String answer = in.nextLine();
 		return answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("1");
 	}
-	public static String displayFinalScore(Player p) {
-		return "Player "+p.name+" got "+p.getNumericScore()+" point(s)!";
+	public static void displayFinalScore(Player p) {
+		System.out.println("Player "+p.name+" got "+p.getNumericScore()+" point(s)!");
 	}
 	public static void displayWinner(Player p){
 
