@@ -96,19 +96,19 @@ public class UI {
 			System.out.println("Enter the letters of the dice that you want to keep");
 
 			input = in.nextLine();
-			if(input.indexOf("a") >= 0) {
+			if(input.indexOf("a") >= 0 || input.indexOf("A") >= 0) {
 				indecies.set(0, dice[0]);
 			}
-			if(input.indexOf("b") >= 0) {
+			if(input.indexOf("b") >= 0 || input.indexOf("B") >= 0) {
 				indecies.set(1, dice[1]);
 			}
-			if(input.indexOf("c") >= 0) {
+			if(input.indexOf("c") >= 0 || input.indexOf("C") >= 0) {
 				indecies.set(2, dice[2]);
 			}
-			if(input.indexOf("d") >= 0) {
+			if(input.indexOf("d") >= 0 || input.indexOf("D") >= 0) {
 				indecies.set(3, dice[3]);
 			}
-			if(input.indexOf("e") >= 0) {
+			if(input.indexOf("e") >= 0 || input.indexOf("E") >= 0) {
 				indecies.set(4, dice[4]);
 			}
 
