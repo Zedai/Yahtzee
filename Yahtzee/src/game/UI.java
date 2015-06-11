@@ -1,5 +1,6 @@
 package game;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class UI {
@@ -196,4 +197,9 @@ public class UI {
 	public static String displayFinalScore(Player p) {
 		return "Player "+p.name+" got "+p.getNumericScore()+" point(s)!";
 	}
+	public static void displayWinner(Player p){
+
+		System.out.println("Player "+p.name+" won!");
+	}
+	
 }

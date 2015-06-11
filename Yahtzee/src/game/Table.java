@@ -42,11 +42,14 @@ public class Table {
 	 * Runs when game is over Displays scores and bonuses, compares players, ask
 	 * if they want to play again
 	 */
-	public static void endGame() {
+	public void endGame() {
+		Player winner = players.get(0);
 		for (Player p : players) {
 			UI.displayFinalScore(p);
+			if(winner.getNumericScore()<p.getNumericScore())
+				winner = p;
 		}
-
+		UI.displayWinner(winner);
 		if (UI.promptForRePlay())
 			main(null);
 	}
