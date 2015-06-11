@@ -29,7 +29,6 @@ public class Player {
 	 */
 	public Player(String name){
 		this.name = name;
-		this.score[0] = 100;
 	}
 
 	/**
@@ -47,6 +46,8 @@ public class Player {
 			reRoll();
 		else if(choice == 3)
 			chooseBonus();
+		else if(choice == 4)
+			
 	}
 	
 	public boolean isFinished()
@@ -100,6 +101,8 @@ public class Player {
 			act();
 		}
 	}
+	
+	public void 
 	
 	public int getNumericScore()
 	{

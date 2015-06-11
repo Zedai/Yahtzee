@@ -17,12 +17,14 @@ public class UI {
 		System.out.println("-------------------------");
 		System.out.println("Choose an action");
 		
-		if(canRoll);
-		System.out.println("1. Roll");
+		if(canRoll)
+			System.out.println("1. Roll");
 		if(canReRoll)
 			System.out.println("2. Re-Roll");
 		if(canChooseBonus)
 			System.out.println("3. Choose Bonus");
+		
+		System.out.println("4. Dispaly Bonuses");
 		
 		return Integer.parseInt(in.nextLine());
 	}
@@ -166,9 +168,5 @@ public class UI {
 		System.out.println("==========================" + builder);
 		System.out.println("It's " + p.name +"'s turn, with "+ p.getNumericScore() +" points");
 		System.out.println("==========================" + builder);
-	}
-	public static void tooManyReRolls() {
-		// TODO Auto-generated method stub
-		
 	}
 }
