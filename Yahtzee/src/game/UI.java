@@ -1,10 +1,10 @@
 package game;
 
-<<<<<<< HEAD
+
 import java.util.ArrayList;
-=======
+
 import java.util.List;
->>>>>>> branch 'master' of https://github.com/chriscush765/Yahtzee.git
+
 import java.util.Scanner;
 
 public class UI {
@@ -96,7 +96,7 @@ public class UI {
 			System.out.println("Enter the letters of the dice that you want to keep");
 	int index=0;
 
-		do {
+		
 			input = in.nextLine();
 			if(input.indexOf("A") >= 0) {
 				indecies.set(0, dice[0]);
