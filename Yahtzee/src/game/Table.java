@@ -14,10 +14,8 @@ public class Table {
 	 */
 	public void setupGame(){
 		players.clear();
-		for(int i=1;i<=4;i++) {
-			
+		for(int i=1;i<=2;i++) {
 			players.add(new Player(UI.getPlayerName(i)));
-			
 		}
 		runGame();
 	}
@@ -28,13 +26,15 @@ public class Table {
 	public void runGame()
 	{
 		System.out.println("WALCOM 2 YATZIE");
-		for (Player p : players) 
-		{
-			UI.announcePlayerTurn(p);
-			p.act();
+		while(!players.get(0).isFinished()){
+			for (Player p : players) 
+			{
+				UI.announcePlayerTurn(p);
+				p.act();
+			}
 		}
 	}
-	
+
 	/**
 	 * Runs when game is over
 	 * Displays scores and bonuses, compares players, ask if they want to play again

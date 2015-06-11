@@ -32,7 +32,7 @@ public class DiceUtil {
 	 * @return
 	 */
 	public static int[] getRandomDice(){
-		return populateDiceArray(new int[6]);
+		return populateDiceArray(new int[5]);
 	}
 
 	/**

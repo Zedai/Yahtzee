@@ -30,15 +30,17 @@ public class Player {
 	 */
 	public Player(String name){
 		this.name = name;
+		this.rerolls = 0;
 	}
 
 	/**
 	 * Prompts the player to choose an action
 	 */
 	public void act() {
-		boolean canRoll = !rolled && !reRolled;
-		boolean canReRoll = rolled && rerolls <= 3;
+		boolean canRoll = !rolled;
+		boolean canReRoll = rolled && !reRolled;
 		boolean canChooseBonus = rolled && !choseBonus;
+		System.out.println(rolled + "" + reRolled + "" + choseBonus);
 		
 		int choice = UI.promptForAction(canRoll, canReRoll, canChooseBonus);
 		
@@ -66,21 +68,20 @@ public class Player {
 	public void roll(){
 		dice = DiceUtil.getRandomDice();
 		UI.printRoll(dice);
+		rolled = true;
+		choseBonus = false;
+		act();
 	}
 
 	/**
 	 * Lets the user reroll designated dice
 	 */
 	public void reRoll(){
-		if(rerolls >= 3){
-			int[] newDice = UI.promptForReRoll(dice);
-			dice = DiceUtil.populateDiceArray(newDice);
-			UI.printReRoll(dice);
-		}
-		else {
-			UI.tooManyReRolls();
-			act();
-		}
+		int[] newDice = UI.promptForReRoll(dice);
+		dice = DiceUtil.populateDiceArray(newDice);
+		UI.printReRoll(dice);
+		reRolled = true;
+		act();
 	}
 	
 
@@ -92,9 +93,11 @@ public class Player {
 		UI.displayBonuses(possibleBonuses, completedBonuses);
 		int choice = UI.promptToChooseBonus();
 		if (!completedBonuses[choice]) {
-			score[choice] += possibleBonuses[choice];
+			score[choice] = possibleBonuses[choice];
 			completedBonuses[choice] = true;
 			choseBonus = true;
+			rolled = false;
+			reRolled = false;
 		} else {
 			UI.invalidBonusChoice();
 			act();

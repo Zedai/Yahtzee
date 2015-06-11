@@ -153,6 +153,10 @@ public class UI {
 		
 	}
 	public static void announcePlayerTurn(Player p) {
+		System.out.println("It's " + p.name +"'s turn!");
+		
+	}
+	public static void tooManyReRolls() {
 		// TODO Auto-generated method stub
 		
 	}
