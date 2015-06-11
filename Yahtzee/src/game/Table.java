@@ -24,10 +24,6 @@ public class Table {
 	 * Main loop of the game
 	 */
 	public static void runGame() {
-		System.out.println("#########################");
-		System.out.println("###  WALCOM 2 YATZIE  ###");
-		System.out.println("#########################");
-
 		while (!players.get(0).isFinished()) {
 			for (Player p : players) {
 
