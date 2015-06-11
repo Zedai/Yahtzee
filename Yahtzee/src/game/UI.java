@@ -14,8 +14,9 @@ public class UI {
 	 * @return 1 for roll, 2 for reroll, 3 to choose bonus
 	 */
 	public static int promptForAction(boolean canRoll, boolean canReRoll, boolean canChooseBonus){
-		System.out.println("-------------------------");
-		System.out.println("Choose an action");
+		System.out.println("------------------------");
+		System.out.println("--- Choose an action ---");
+		System.out.println("------------------------");
 
 		if(canRoll)
 			System.out.println("1. Roll");
@@ -177,9 +178,9 @@ public class UI {
 			builder.append("=");
 		}
 
-		System.out.println("==========================" + builder);
-		System.out.println("It's " + p.name +"'s turn, with "+ p.getNumericScore() +" points");
-		System.out.println("==========================" + builder);
+		System.out.println("================================" + builder);
+		System.out.println("== It's " + p.name +"'s turn, with "+ p.getNumericScore() +" points ==");
+		System.out.println("================================" + builder);
 	}
 	
 	public static void invalidChoice() {
