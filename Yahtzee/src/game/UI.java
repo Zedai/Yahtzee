@@ -94,6 +94,7 @@ public class UI {
 				if(index >= 0 && index <= 4){
 					dice[index] = 0;
 					System.out.println("Marked die "+ index+" for reroll, here are your dice:");
+					System.out.println(" A   B   C   D   E ");
 					System.out.println(printDice(dice));
 	
 				}
