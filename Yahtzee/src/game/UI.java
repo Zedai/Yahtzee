@@ -69,7 +69,7 @@ public class UI {
 	public static int[] promptForReRoll(int[] dice){
 		System.out.println(" A   B   C   D   E ");
 		System.out.println(printDice(dice));
-		
+
 		String input="";
 		int index=0;
 
@@ -88,24 +88,14 @@ public class UI {
 				index = 4;
 			else
 				index = -1;
-			
-			try {
-				
-				if(index >= 0 && index <= 4){
-					dice[index] = 0;
-					System.out.println("Marked die "+ index+" for reroll, here are your dice:");
-					System.out.println(" A   B   C   D   E ");
-					System.out.println(printDice(dice));
-	
-				}
-				else
-					errorDialogue("That number is not on the list silly");
-			} catch (NumberFormatException e) {
-				if(input.equalsIgnoreCase("done"))
-					index = -1;
-				else
-					errorDialogue("You did not type in a valid choice");
+
+			if(index >= 0 && index <= 4){
+				dice[index] = 0;
+				System.out.println("Marked die "+ index+" for reroll, here are your dice:");
+				System.out.println(" A   B   C   D   E ");
+				System.out.println(printDice(dice));
 			}
+			
 		} while (index != -1 );
 
 		return dice;
@@ -154,8 +144,19 @@ public class UI {
 		
 	}
 	public static void announcePlayerTurn(Player p) {
-		System.out.println("It's " + p.name +"'s turn!");
+		StringBuilder builder = new StringBuilder();
 		
+		for (int i = 0; i < p.name.length(); i++) {
+			builder.append("=");
+		}
+		
+		for (int i = 0; i < String.valueOf(p.getNumericScore()).length() ; i++) {
+			builder.append("=");
+		}
+		
+		System.out.println("==========================" + builder);
+		System.out.println("It's " + p.name +"'s turn, with "+ p.getNumericScore() +" points");
+		System.out.println("==========================" + builder);
 	}
 	public static void tooManyReRolls() {
 		// TODO Auto-generated method stub

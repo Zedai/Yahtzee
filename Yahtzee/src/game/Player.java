@@ -6,8 +6,7 @@ public class Player {
 	public final String name;
 	private int[] dice;
 	private boolean[] completedBonuses = new boolean[13];
-	private int rerolls;
-	private int[] score;
+	private int[] score = new int[13];
 	
 	private boolean rolled;
 	private boolean reRolled;
@@ -30,7 +29,7 @@ public class Player {
 	 */
 	public Player(String name){
 		this.name = name;
-		this.rerolls = 0;
+		this.score[0] = 100;
 	}
 
 	/**
@@ -40,8 +39,6 @@ public class Player {
 		boolean canRoll = !rolled;
 		boolean canReRoll = rolled && !reRolled;
 		boolean canChooseBonus = rolled && !choseBonus;
-		System.out.println(rolled + "" + reRolled + "" + choseBonus);
-		
 		int choice = UI.promptForAction(canRoll, canReRoll, canChooseBonus);
 		
 		if(choice == 1)
