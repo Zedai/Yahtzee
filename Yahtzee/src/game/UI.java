@@ -194,7 +194,6 @@ public class UI {
 		return answer.equalsIgnoreCase("yes");
 	}
 	public static String displayFinalScore(Player p) {
-		// TODO Auto-generated method stub
-		
+		return "Player "+p.name+" got "+p.getNumericScore()+" point(s)!";
 	}
 }
