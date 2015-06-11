@@ -193,7 +193,6 @@ public class UI {
 		return answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("1");
 	}
 	public static String displayFinalScore(Player p) {
-		// TODO Auto-generated method stub
-		
+		return "Player "+p.name+" got "+p.getNumericScore()+" point(s)!";
 	}
 }
