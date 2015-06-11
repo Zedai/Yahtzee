@@ -6,39 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import java.util.Scanner;
-
+/**
+ * @author everyone in the group
+ * holds all methods that contain a print statement. Methods within print dice,
+ *  requests for the players' name, prompts to choose a bonus, and other stuff.
+ */
 public class UI {
 
 	private static Scanner in = new Scanner(System.in);
 
-	/**
-	 * Prompts the user to choose an action
-	 * @param canChooseBonus if the player can choose a bonus
-	 * @param canReRoll if the player can reroll
-	 * @param canRoll if the player can roll
-	 * @return 1 for roll, 2 for reroll, 3 to choose bonus
-	 */
-	public static int promptForAction(boolean canRoll, boolean canReRoll, boolean canChooseBonus){
-		System.out.println("------------------------");
-		System.out.println("--- Choose an action ---");
-		System.out.println("------------------------");
-
-		if(canRoll)
-			System.out.println("1. Roll");
-		if(canReRoll)
-			System.out.println("2. Re-Roll");
-		if(canChooseBonus)
-			System.out.println("3. Choose Bonus");
-
-		System.out.println("4. Dispaly Bonuses");
-
-		try {
-			return Integer.parseInt(in.nextLine());
-		} catch (NumberFormatException e) {
-			return -1;
-		}
-
-	}
+	
 	public static String getPlayerName(int playerNumber) {
 
 		System.out.println("Enter Player "+playerNumber+" 's name"); 
@@ -119,7 +96,12 @@ public class UI {
 				
 		return dice;
 	}
-
+	/**
+	 * prints the player's hand of dice
+	 * @param dice the hand of dice
+	 * @return a nicely formatted string representing the dice.
+	 */
+	
 	private static String printDice(int[] dice){
 		StringBuilder builder = new StringBuilder();
 		for (int i : dice) {
@@ -146,6 +128,11 @@ public class UI {
 				System.out.println("[ " + i + " ]: " + bonusNames[i] + " yields " + possibleBonuses[i] + " points.");
 		}
 	}
+	/**
+	 * prints the player's table
+	 * @param scores
+	 * @param completedBonuses
+	 */
 	public static void playerBonus(int[] scores, boolean[] completedBonuses) {
 		String[] bonusNames = {"Ones","Twos","Threes","Fours","Fives","Sixes","Three-Of-A-Kind","Four-Of-A-Kind","Full House","Small Straight","Large Straight","Yahtzee","Chance"};
 		System.out.println("Here are the scores you already have:");
