@@ -47,7 +47,13 @@ public class UI {
 	 */
 	public static int promptToChooseBonus(){
 		System.out.println("Enter the number of the desired bonus");
-		return Integer.parseInt(in.nextLine());
+		try {
+			return Integer.parseInt(in.nextLine());
+		} catch (Exception e) {
+			System.out.println("That isn't a valid bonus");
+			return promptToChooseBonus();
+		}
+		
 	}
 	/**
 	 * Prints out the outcome of an initial roll
