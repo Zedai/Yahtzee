@@ -3,9 +3,9 @@ package game;
 import java.util.Scanner;
 
 public class UI {
-	
+
 	private static Scanner in = new Scanner(System.in);
-	
+
 	/**
 	 * Prompts the user to choose an action
 	 * @param canChooseBonus if the player can choose a bonus
@@ -16,28 +16,28 @@ public class UI {
 	public static int promptForAction(boolean canRoll, boolean canReRoll, boolean canChooseBonus){
 		System.out.println("-------------------------");
 		System.out.println("Choose an action");
-		
+
 		if(canRoll)
 			System.out.println("1. Roll");
 		if(canReRoll)
 			System.out.println("2. Re-Roll");
 		if(canChooseBonus)
 			System.out.println("3. Choose Bonus");
-		
+
 		System.out.println("4. Dispaly Bonuses");
-		
+
 		try {
 			return Integer.parseInt(in.nextLine());
 		} catch (NumberFormatException e) {
 			return -1;
 		}
-		
+
 	}
 	public static String getPlayerName(int playerNumber) {
-		
+
 		System.out.println("Enter Player "+playerNumber+" 's name"); 
 		return in.nextLine();
-		
+
 	}
 	/**
 	 * Prompt the player to choose a bonus
@@ -57,7 +57,7 @@ public class UI {
 		System.out.println("You rolled and got:");
 		System.out.println(printDice(dice));
 	}
-	
+
 	/**
 	 * Prints out the outcome of a reroll
 	 * @param dice the new dice
@@ -66,7 +66,7 @@ public class UI {
 		System.out.println("You Re-Rolled and got: ");
 		System.out.println(printDice(dice));
 	}
-	
+
 	/**
 	 * Prompts the user to choose which dice he wants to reroll
 	 * If the user wants to reroll a certain die, set that die's value in the array to 0
@@ -102,12 +102,12 @@ public class UI {
 				System.out.println(" A   B   C   D   E ");
 				System.out.println(printDice(dice));
 			}
-			
+
 		} while (index != -1 );
 
 		return dice;
 	}
-	
+
 	private static String printDice(int[] dice){
 		StringBuilder builder = new StringBuilder();
 		for (int i : dice) {
@@ -118,9 +118,9 @@ public class UI {
 		}
 		return builder.toString();
 	}
-	
 
-	
+
+
 	/**
 	 * Displays the possible bonuses in a nice table
 	 * @param possibleBonuses the bonuses to display
@@ -150,32 +150,39 @@ public class UI {
 	public static void invalidBonusChoice(){
 		errorDialogue("You have already chosen this bonus before");
 	}
-	
+
 	/**
 	 * Warn the player that they tried to choose a bonus that they have already chosen before
 	 * @param error the error to display
 	 */
 	public static void errorDialogue(String error) {
 		System.out.println("Error: " + error);
-		
+
 	}
+	
 	public static void announcePlayerTurn(Player p) {
 		StringBuilder builder = new StringBuilder();
-		
+
 		for (int i = 0; i < p.name.length(); i++) {
 			builder.append("=");
 		}
-		
+
 		for (int i = 0; i < String.valueOf(p.getNumericScore()).length() ; i++) {
 			builder.append("=");
 		}
-		
+
 		System.out.println("==========================" + builder);
 		System.out.println("It's " + p.name +"'s turn, with "+ p.getNumericScore() +" points");
 		System.out.println("==========================" + builder);
 	}
+	
 	public static void invalidChoice() {
 		errorDialogue("Stop trying to cheat you l33t hacker");
-		
+
+	}
+	
+	public static boolean promptForRePlay() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }
