@@ -3,6 +3,8 @@ package game;
 import java.util.ArrayList;
 import java.util.List;
 
+import game.Player;
+
 public class Table {
 
 	private List<Player> players = new ArrayList<Player>();
@@ -17,7 +19,6 @@ public class Table {
 			players.add(new Player(UI.getPlayerName(i)));
 			
 		}
-		
 		runGame();
 	}
 	
@@ -29,6 +30,7 @@ public class Table {
 		System.out.println("WALCOM 2 YATZIE");
 		for (Player p : players) 
 		{
+			UI.announcePlayerTurn(p);
 			p.act();
 		}
 	}

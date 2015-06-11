@@ -28,7 +28,7 @@ public class UI {
 	}
 	public static String getPlayerName(int playerNumber) {
 		
-		System.out.println("Enter Player "+playerNumber+" 's Number"); 
+		System.out.println("Enter Player "+playerNumber+" 's name"); 
 		return in.nextLine();
 		
 	}
@@ -150,6 +150,10 @@ public class UI {
 	 */
 	public static void errorDialogue(String error) {
 		System.out.println("Error: " + error);
+		
+	}
+	public static void announcePlayerTurn(Player p) {
+		// TODO Auto-generated method stub
 		
 	}
 }
