@@ -43,10 +43,13 @@ public class Table {
 	 * if they want to play again
 	 */
 	public void endGame() {
+		Player winner = players.get(0);
 		for (Player p : players) {
 			UI.displayFinalScore(p);
+			if(winner.getNumericScore()<p.getNumericScore())
+				winner = p;
 		}
-
+		UI.displayWinner(winner);
 		if (UI.promptForRePlay())
 			setupGame();
 	}
