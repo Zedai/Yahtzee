@@ -17,12 +17,14 @@ public class UI {
 		System.out.println("-------------------------");
 		System.out.println("Choose an action");
 		
-		if(canRoll);
-		System.out.println("1. Roll");
+		if(canRoll)
+			System.out.println("1. Roll");
 		if(canReRoll)
 			System.out.println("2. Re-Roll");
 		if(canChooseBonus)
 			System.out.println("3. Choose Bonus");
+		
+		System.out.println("4. Dispaly Bonuses");
 		
 		return Integer.parseInt(in.nextLine());
 	}
@@ -127,7 +129,16 @@ public class UI {
 				System.out.println("[ " + i + " ]: " + bonusNames[i] + " yields " + possibleBonuses[i] + " points.");
 		}
 	}
-	
+	public static void playerBonus(int[] scores, boolean[] completedBonuses) {
+		String[] bonusNames = {"Ones","Twos","Threes","Fours","Fives","Sixes","Three-Of-A-Kind","Four-Of-A-Kind","Full House","Small Straight","Large Straight","Yahtzee","Chance"};
+		System.out.println("Here are the scores you already have:");
+		for (int i = 0; i < scores.length; i++) {
+			String bonusLine = "[ " + i + " ]: " + bonusNames[i] + ": " + scores[i] + " points.";
+			if(!completedBonuses[i])
+				bonusLine += " (incomplete)";
+			System.out.println(bonusLine);
+		}
+	}
 	/**
 	 * Alert the player that they have chose a bonus that has already been chosen before
 	 */
@@ -157,9 +168,5 @@ public class UI {
 		System.out.println("==========================" + builder);
 		System.out.println("It's " + p.name +"'s turn, with "+ p.getNumericScore() +" points");
 		System.out.println("==========================" + builder);
-	}
-	public static void tooManyReRolls() {
-		// TODO Auto-generated method stub
-		
 	}
 }
