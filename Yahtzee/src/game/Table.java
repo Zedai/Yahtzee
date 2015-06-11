@@ -44,7 +44,7 @@ public class Table {
 	{
 		for(Player p : players)
 		{
-			p.getNumericScore();
+			UI.displayFinalScore(p);
 		}
 		
 		if(UI.promptForRePlay())
