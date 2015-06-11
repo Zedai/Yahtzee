@@ -3,6 +3,7 @@
  */
 package game;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -68,17 +69,22 @@ public class DiceUtil {
 	 * @return
 	 */
 	private static int fullHouse(int[] dice) {
-		
-		
-		//int duplicates = 0;
-		//for(int j = 0; j < dice.length; j++)
-		//	for(int k = 0; k < dice.length; k++)
-		//		if(j!=k && dice[j] == dice[k])
-		//			duplicates++;
-		//if(duplicates >= 3)
-		//	return 25;
-		//
-		//return 0;
+		int[] a = greatestOccurrence(dice);
+		ArrayList<Integer> lastTwo = new ArrayList();
+		if(a[0]== 3){
+			int threeOfMe = a[1];
+			for(int c = 0; c<dice.length; c++){
+				if (!(dice[c]==threeOfMe))
+					lastTwo.add(dice[c]);
+			}
+			if(lastTwo.get(0).equals(lastTwo.get(1)))
+				return 25;
+			else
+				return 0;
+			
+		}
+		else
+			return 0;
 		
 	}
 	/**
