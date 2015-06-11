@@ -187,4 +187,8 @@ public class UI {
 		String answer = in.nextLine();
 		return answer.equalsIgnoreCase("yes");
 	}
+	public static String displayFinalScore(Player p) {
+		// TODO Auto-generated method stub
+		
+	}
 }
