@@ -7,12 +7,12 @@ import game.Player;
 
 public class Table {
 
-	private List<Player> players = new ArrayList<Player>();
+	private static List<Player> players = new ArrayList<Player>();
 
 	/**
 	 * Prepares the game for play
 	 */
-	public void setupGame() {
+	public static void main(String[] args) {
 		players.clear();
 		for (int i = 1; i <= 2; i++) {
 			players.add(new Player(UI.getPlayerName(i)));
@@ -23,7 +23,7 @@ public class Table {
 	/**
 	 * Main loop of the game
 	 */
-	public void runGame() {
+	public static void runGame() {
 		System.out.println("#########################");
 		System.out.println("###  WALCOM 2 YATZIE  ###");
 		System.out.println("#########################");
@@ -42,13 +42,13 @@ public class Table {
 	 * Runs when game is over Displays scores and bonuses, compares players, ask
 	 * if they want to play again
 	 */
-	public void endGame() {
+	public static void endGame() {
 		for (Player p : players) {
 			UI.displayFinalScore(p);
 		}
 
 		if (UI.promptForRePlay())
-			setupGame();
+			main(null);
 	}
 
 }

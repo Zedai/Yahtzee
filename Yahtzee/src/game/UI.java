@@ -88,7 +88,7 @@ public class UI {
 		int index=0;
 
 		do {
-			System.out.println("Enter the number of the die that you want to change, or done to quit.");
+			System.out.println("Enter the letter of the die that you want to change, or done to quit.");
 			input = in.nextLine();
 			if(input.equalsIgnoreCase("A"))
 				index = 0;
