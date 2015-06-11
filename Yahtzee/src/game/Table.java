@@ -27,7 +27,7 @@ public class Table {
 		System.out.println("#########################");
 		System.out.println("###  WALCOM 2 YATZIE  ###");
 		System.out.println("#########################");
-
+		
 		while (!players.get(0).isFinished()) {
 			for (Player p : players) {
 
