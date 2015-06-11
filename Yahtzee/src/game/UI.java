@@ -67,6 +67,7 @@ public class UI {
 	 */
 	public static void printRoll(int[] dice){
 		System.out.println("You rolled and got:");
+		System.out.println(" A   B   C   D   E ");
 		System.out.println(printDice(dice));
 	}
 
@@ -76,6 +77,7 @@ public class UI {
 	 */
 	public static void printReRoll(int[] dice){
 		System.out.println("You Re-Rolled and got: ");
+
 		System.out.println(printDice(dice));
 	}
 
@@ -86,8 +88,6 @@ public class UI {
 	 * 
 	 */
 	public static int[] promptForReRoll(int[] dice){
-		System.out.println(" A   B   C   D   E ");
-		System.out.println(printDice(dice));
 
 		String input="";
 		ArrayList<Integer> indecies = new ArrayList<Integer>();
@@ -115,8 +115,7 @@ public class UI {
 			
 				for(int i=0;i<dice.length;i++) 
 					dice[i] = indecies.get(i);
-				
-				System.out.println("Marked dice for reroll, here are your dice:");
+
 				
 		return dice;
 	}
