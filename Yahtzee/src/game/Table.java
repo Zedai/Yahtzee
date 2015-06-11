@@ -29,6 +29,7 @@ public class Table {
 		while(!players.get(0).isFinished()){
 			for (Player p : players) 
 			{
+				
 				UI.announcePlayerTurn(p);
 				p.act();
 			}

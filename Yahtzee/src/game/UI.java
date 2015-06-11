@@ -127,7 +127,16 @@ public class UI {
 				System.out.println("[ " + i + " ]: " + bonusNames[i] + " yields " + possibleBonuses[i] + " points.");
 		}
 	}
-	
+	public static void playerBonus(int[] scores, boolean[] completedBonuses) {
+		String[] bonusNames = {"Ones","Twos","Threes","Fours","Fives","Sixes","Three-Of-A-Kind","Four-Of-A-Kind","Full House","Small Straight","Large Straight","Yahtzee","Chance"};
+		System.out.println("Here are the scores you already have:");
+		for (int i = 0; i < scores.length; i++) {
+			String bonusLine = "[ " + i + " ]: " + bonusNames[i] + ": " + scores[i] + " points.";
+			if(!completedBonuses[i])
+				bonusLine += " (incomplete)";
+			System.out.println(bonusLine);
+		}
+	}
 	/**
 	 * Alert the player that they have chose a bonus that has already been chosen before
 	 */

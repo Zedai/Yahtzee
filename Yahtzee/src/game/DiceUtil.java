@@ -70,15 +70,15 @@ public class DiceUtil {
 	private static int fullHouse(int[] dice) {
 		
 		
-		int duplicates = 0;
-		for(int j = 0; j < dice.length; j++)
-			for(int k = 0; k < dice.length; k++)
-				if(j!=k && dice[j] == dice[k])
-					duplicates++;
-		if(duplicates >= 3)
-			return 25;
-		
-		return 0;
+		//int duplicates = 0;
+		//for(int j = 0; j < dice.length; j++)
+		//	for(int k = 0; k < dice.length; k++)
+		//		if(j!=k && dice[j] == dice[k])
+		//			duplicates++;
+		//if(duplicates >= 3)
+		//	return 25;
+		//
+		//return 0;
 		
 	}
 	/**
