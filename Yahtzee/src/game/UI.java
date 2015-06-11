@@ -1,6 +1,10 @@
 package game;
 
+<<<<<<< HEAD
+import java.util.ArrayList;
+=======
 import java.util.List;
+>>>>>>> branch 'master' of https://github.com/chriscush765/Yahtzee.git
 import java.util.Scanner;
 
 public class UI {
@@ -86,32 +90,40 @@ public class UI {
 		System.out.println(printDice(dice));
 
 		String input="";
-		int index=0;
+		ArrayList<Integer> indecies = new ArrayList<Integer>();
+		indecies.add(0);indecies.add(0);indecies.add(0);indecies.add(0);indecies.add(0);
+		
+			System.out.println("Enter the letters of the dice that you want to keep");
+	int index=0;
 
 		do {
-			System.out.println("Enter the letter of the die that you want to change, or done to quit.");
 			input = in.nextLine();
-			if(input.equalsIgnoreCase("A"))
-				index = 0;
-			else if(input.equalsIgnoreCase("B"))
-				index = 1;
-			else if(input.equalsIgnoreCase("C"))
-				index = 2;
-			else if(input.equalsIgnoreCase("D"))
-				index=3;
-			else if(input.equalsIgnoreCase("E"))
-				index = 4;
-			else
-				index = -1;
-
-			if(index >= 0 && index <= 4){
-				dice[index] = 0;
-				System.out.println("Marked die "+ index+" for reroll, here are your dice:");
-				System.out.println(" A   B   C   D   E ");
-				System.out.println(printDice(dice));
+			if(input.indexOf("A") >= 0) {
+				indecies.set(0, dice[0]);
+			}
+			if(input.indexOf("B") >= 0) {
+				indecies.set(1, dice[1]);
+			}
+			if(input.indexOf("C") >= 0) {
+				indecies.set(2, dice[2]);
+			}
+			if(input.indexOf("D") >= 0) {
+				indecies.set(3, dice[3]);
+			}
+			if(input.indexOf("E") >= 0) {
+				indecies.set(4, dice[4]);
 			}
 
-		} while (index != -1 );
+			
+				for(int i=0;i<dice.length;i++) 
+					dice[i] = indecies.get(i);
+				
+				System.out.println("Marked dice for reroll, here are your dice:");
+				System.out.println(" A   B   C   D   E ");
+				System.out.println(printDice(dice));
+			
+
+		
 
 		return dice;
 	}
@@ -194,8 +206,8 @@ public class UI {
 		String answer = in.nextLine();
 		return answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("1");
 	}
-	public static String displayFinalScore(Player p) {
-		return "Player "+p.name+" got "+p.getNumericScore()+" point(s)!";
+	public static void displayFinalScore(Player p) {
+		System.out.println("Player "+p.name+" got "+p.getNumericScore()+" point(s)!");
 	}
 	public static void displayWinner(Player p){
 
