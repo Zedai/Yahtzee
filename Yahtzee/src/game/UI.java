@@ -51,7 +51,7 @@ public class UI {
 		try {
 			return Integer.parseInt(in.nextLine());
 		} catch (Exception e) {
-			System.out.println("That isn't a valid bonus you fool");
+			System.out.println("That isn't a valid bonus ya fuul");
 			return promptToChooseBonus();
 		}
 		
@@ -184,7 +184,7 @@ public class UI {
 	}
 	
 	public static void invalidChoice() {
-		errorDialogue("Stop trying to cheat you l33t hacker");
+		errorDialogue("Stop trying to cheat you 3lite h4xz0r");
 
 	}
 	
