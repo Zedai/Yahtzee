@@ -26,7 +26,13 @@ public class UI {
 		
 		System.out.println("4. Dispaly Bonuses");
 		
-		return Integer.parseInt(in.nextLine());
+		try 
+		{
+			return Integer.parseInt(in.nextLine());
+		} catch (NumberFormatException e) 
+		{
+			return -1;
+		}
 	}
 	public static String getPlayerName(int playerNumber) {
 		
