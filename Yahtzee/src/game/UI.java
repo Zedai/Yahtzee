@@ -187,7 +187,7 @@ public class UI {
 
 	}
 	
-	public static boolean promptForRePlay() {
+	public static boolean promptForReplay() {
 		System.out.println("Would you like to replay?");
 		System.out.println("Yes/No");
 		String answer = in.nextLine();
