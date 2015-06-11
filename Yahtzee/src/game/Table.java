@@ -42,7 +42,7 @@ public class Table {
 	 * Runs when game is over Displays scores and bonuses, compares players, ask
 	 * if they want to play again
 	 */
-	public void endGame() {
+	public static void endGame() {
 		Player winner = players.get(0);
 		for (Player p : players) {
 			UI.displayFinalScore(p);
