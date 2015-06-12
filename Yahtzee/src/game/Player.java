@@ -23,7 +23,7 @@ public class Player {
 	 *Full House		Three of one number and two of another				25	
 	 *Small Straight	Four sequential dice (1-2-3-4, 2-3-4-5, or 3-4-5-6)	30	
 	 *Large Straight	Five sequential dice (1-2-3-4-5 or 2-3-4-5-6)		40	
-	 *Yahtzee			All five dice the same								50	
+	 *Yaht zee			All five dice the same								50	
 	 *Chance			Any combination										Sum of all dice
 	 * 
 	 */
@@ -36,6 +36,8 @@ public class Player {
 	 */
 	public void act() {
 		roll();
+		reRoll();
+		reRoll();
 		reRoll();
 		chooseBonus();
 		
@@ -77,7 +79,11 @@ public class Player {
 		int[] possibleBonuses = DiceUtil.calculateScores(dice);
 		UI.displayBonuses(possibleBonuses, completedBonuses);
 		int choice = UI.promptToChooseBonus();
-		if (!completedBonuses[choice]) {
+		
+		if(choice == 11 && completedBonuses[11] && score[11] != 0) //yathzee twice!
+			score[11] += 100;
+		
+		else if (!completedBonuses[choice]) {
 			score[choice] = possibleBonuses[choice];
 			completedBonuses[choice] = true;
 		} else {
@@ -88,7 +94,17 @@ public class Player {
 	
 	public int getNumericScore()
 	{
+		
+		int upper = 0;
 		int sum = 0;
+		
+		for (int i = 0; i < 6; i++) {
+			upper += score[i];
+		}
+		
+		if(upper >= 63)
+			sum += 35;
+		
 		for(int x = 0; x < score.length; x++)
 		{
 			sum += score[x];

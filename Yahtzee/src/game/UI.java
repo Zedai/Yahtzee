@@ -43,6 +43,7 @@ public class UI {
 	 * @param dice The dice that the player just rolled
 	 */
 	public static void printRoll(int[] dice){
+		System.out.println("\n");
 		System.out.println("You rolled and got:");
 		System.out.println(" A   B   C   D   E ");
 		System.out.println(printDice(dice));
@@ -54,7 +55,7 @@ public class UI {
 	 */
 	public static void printReRoll(int[] dice){
 		System.out.println("You Re-Rolled and got: ");
-
+		System.out.println(" A   B   C   D   E ");
 		System.out.println(printDice(dice));
 	}
 
@@ -70,6 +71,7 @@ public class UI {
 		ArrayList<Integer> indecies = new ArrayList<Integer>();
 		indecies.add(0);indecies.add(0);indecies.add(0);indecies.add(0);indecies.add(0);
 		
+			System.out.println("\n");
 			System.out.println("Enter the letters of the dice that you want to keep");
 
 			input = in.nextLine();
