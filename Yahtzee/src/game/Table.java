@@ -35,7 +35,7 @@ public class Table {
 	}
 
 	/**
-	 * Runs when game is over Displays scores and bonuses, compares players, ask
+	 * Runs when game is over Displays scores and catagories, compares players, ask
 	 * if they want to play again
 	 */
 	public static void endGame() {

@@ -9,7 +9,7 @@ import java.util.Scanner;
 /**
  * @author everyone in the group
  * holds all methods that contain a print statement. Methods within print dice,
- *  requests for the players' name, prompts to choose a bonus, and other stuff.
+ *  requests for the players' name, prompts to choose a catagory, and other stuff.
  */
 public class UI {
 
@@ -23,18 +23,18 @@ public class UI {
 
 	}
 	/**
-	 * Prompt the player to choose a bonus
-	 * @return an int relating to the index in the bonuses array
+	 * Prompt the player to choose a catagory
+	 * @return an int relating to the index in the catagories array
 	 * for example, 0 means ones
 	 * 7 means three pair or whatever
 	 */
-	public static int promptToChooseBonus(){
-		System.out.println("Enter the number of the desired bonus");
+	public static int promptToChooseCatagories(){
+		System.out.println("Enter the number of the desired catagory");
 		try {
 			return Integer.parseInt(in.nextLine());
 		} catch (Exception e) {
-			System.out.println("That isn't a valid bonus ya fuul");
-			return promptToChooseBonus();
+			System.out.println("That isn't a valid catagory ya fuul");
+			return promptToChooseCatagories();
 		}
 		
 	}
@@ -72,9 +72,13 @@ public class UI {
 		indecies.add(0);indecies.add(0);indecies.add(0);indecies.add(0);indecies.add(0);
 		
 			System.out.println("\n");
-			System.out.println("Enter the letters of the dice that you want to keep");
+			System.out.println("Enter the letters of the dice that you want to keep, or type all");
 
 			input = in.nextLine();
+			
+			if(input.equalsIgnoreCase("all"))
+				return dice;
+
 			if(input.indexOf("a") >= 0 || input.indexOf("A") >= 0) {
 				indecies.set(0, dice[0]);
 			}
@@ -118,42 +122,42 @@ public class UI {
 
 
 	/**
-	 * Displays the possible bonuses in a nice table
-	 * @param possibleBonuses the bonuses to display
-	 * @param completedBonuses the bonuses that have already been filled
+	 * Displays the possible catagoryes in a nice table
+	 * @param possibleCatagories the catagories to display
+	 * @param completedCatagories the catagories that have already been filled
 	 */
-	public static void displayBonuses(int[] possibleBonuses, boolean[] completedBonuses) {
-		String[] bonusNames = {"Ones","Twos","Threes","Fours","Fives","Sixes","Three-Of-A-Kind","Four-Of-A-Kind","Full House","Small Straight","Large Straight","Yahtzee","Chance"};
-		System.out.println("Here are the bonuses that you can choose from:");
-		for (int i = 0; i < possibleBonuses.length; i++) {
-			if(!completedBonuses[i])
-				System.out.println("[ " + i + " ]: " + bonusNames[i] + " yields " + possibleBonuses[i] + " points.");
+	public static void displayCatagories(int[] possibleCatagories, boolean[] completedCatagories) {
+		String[] catagoryNames = {"Ones","Twos","Threes","Fours","Fives","Sixes","Three-Of-A-Kind","Four-Of-A-Kind","Full House","Small Straight","Large Straight","Yahtzee","Chance"};
+		System.out.println("Here are the catagories that you can choose from:");
+		for (int i = 0; i < possibleCatagories.length; i++) {
+			if(!completedCatagories[i])
+				System.out.println("[ " + i + " ]: " + catagoryNames[i] + " yields " + possibleCatagories[i] + " points.");
 		}
 	}
 	/**
 	 * prints the player's table
 	 * @param scores
-	 * @param completedBonuses
+	 * @param completedCatagories
 	 */
-	public static void playerBonus(int[] scores, boolean[] completedBonuses) {
-		String[] bonusNames = {"Ones","Twos","Threes","Fours","Fives","Sixes","Three-Of-A-Kind","Four-Of-A-Kind","Full House","Small Straight","Large Straight","Yahtzee","Chance"};
+	public static void playerCatagory(int[] scores, boolean[] completedCatagories) {
+		String[] catagoryNames = {"Ones","Twos","Threes","Fours","Fives","Sixes","Three-Of-A-Kind","Four-Of-A-Kind","Full House","Small Straight","Large Straight","Yahtzee","Chance"};
 		System.out.println("Here are the scores you already have:");
 		for (int i = 0; i < scores.length; i++) {
-			String bonusLine = "[ " + i + " ]: " + bonusNames[i] + ": " + scores[i] + " points.";
-			if(!completedBonuses[i])
-				bonusLine += " (incomplete)";
-			System.out.println(bonusLine);
+			String catagoryLine = "[ " + i + " ]: " + catagoryNames[i] + ": " + scores[i] + " points.";
+			if(!completedCatagories[i])
+				catagoryLine += " (incomplete)";
+			System.out.println(catagoryLine);
 		}
 	}
 	/**
-	 * Alert the player that they have chose a bonus that has already been chosen before
+	 * Alert the player that they have chose a catagory that has already been chosen before
 	 */
-	public static void invalidBonusChoice(){
-		errorDialogue("You have already chosen this bonus before, did you forget?");
+	public static void invalidCatagoryChoice(){
+		errorDialogue("You have already chosen this catagory before, did you forget?");
 	}
 
 	/**
-	 * Warn the player that they tried to choose a bonus that they have already chosen before
+	 * Warn the player that they tried to choose a catagory that they have already chosen before
 	 * @param error the error to display
 	 */
 	public static void errorDialogue(String error) {
@@ -193,6 +197,16 @@ public class UI {
 	public static void displayWinner(Player p){
 
 		System.out.println("Player "+p.name+" won!");
+	}
+	public static void jokerDialouge(int dieNum) {
+		System.out.println("You got Yathzee, but you have a zero in that slot! JOKER!!!");
+		System.out.println("Changed your "+dieNum+"'s score because JOKER!");
+		
+		
+	}
+	public static void jokerChooseLower() {
+		System.out.println("JOKER: You have already scored in your Yathzee box \n AND you have the corrosponding upper box filled, \n Choose a bonus again!");
+		
 	}
 	
 }

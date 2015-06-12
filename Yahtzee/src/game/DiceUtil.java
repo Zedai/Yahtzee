@@ -40,9 +40,8 @@ public class DiceUtil {
 	/**
 	 * Calculates All possible scores based on the current dice state
 	 * @author 177864
-	 * @return
+	 * @return an array of all of the possible scores
 	 */
-	//hypothetical dice because I don't see how scores will be calculated if nothing is passed in
 	public static int[] calculateScores(int[] dice) 
 	{
 		
@@ -71,7 +70,7 @@ public class DiceUtil {
 	 */
 	private static int fullHouse(int[] dice) {
 		int[] a = greatestOccurrence(dice);
-		ArrayList<Integer> lastTwo = new ArrayList();
+		List<Integer> lastTwo = new ArrayList<Integer>();
 		if(a[0]== 3){
 			int threeOfMe = a[1];
 			for(int c = 0; c<dice.length; c++){
