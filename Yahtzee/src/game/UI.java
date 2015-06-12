@@ -209,4 +209,22 @@ public class UI {
 		
 	}
 	
+	/**
+	 * Prompts the player to choose the number of players
+	 * @return number of players
+	 */
+	public static int promptNumPlayers() {
+		System.out.println("How many players do you want?");
+		try {
+			return Integer.parseInt(in.nextLine());
+		} catch (Exception e) {
+			System.out.println("That isn't a number");
+			return promptNumPlayers();
+		}
+	}
+	public static void outOfRangeCatagory() {
+		errorDialogue("That number is out of range silly");
+		
+	}
+	
 }

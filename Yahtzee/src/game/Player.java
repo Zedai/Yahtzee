@@ -95,19 +95,26 @@ public class Player {
 			int choice = UI.promptToChooseCatagories();
 
 			//determine if a double yathzee needs to be handeled
-			if(choice == 11 && completedCatagories[11] && score[11] != 0) //yathzee twice!
-				score[11] += 100;
+			if(choice >= 0 && choice <= 12){
+				if(choice == 11 && completedCatagories[11] && score[11] != 0) //yathzee twice!
+					score[11] += 100;
 
-			else if (!completedCatagories[choice]) {
-				score[choice] = possibleCatagories[choice];
-				completedCatagories[choice] = true;
-			} else {
-				UI.invalidCatagoryChoice();
+				else if (!completedCatagories[choice]) {
+					score[choice] = possibleCatagories[choice];
+					completedCatagories[choice] = true;
+				} else {
+					UI.invalidCatagoryChoice();
+					chooseCatagory();
+				}
+
+			}
+			else {
+				UI.outOfRangeCatagory();
 				chooseCatagory();
 			}
 		}
 	}
-	
+
 	/**
 	 * Gets the numeric score of a player's roll
 	 * @return the sum of the dice, and a catagory if neccisary

@@ -14,7 +14,9 @@ public class Table {
 	 */
 	public static void main(String[] args) {
 		players.clear();
-		for (int i = 1; i <= 2; i++) {
+		int playerNum = UI.promptNumPlayers();
+		
+		for (int i = 1; i <= playerNum; i++) {
 			players.add(new Player(UI.getPlayerName(i)));
 		}
 		runGame();
